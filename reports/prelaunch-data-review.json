@@ -1,0 +1,278 @@
+{
+  "generatedAt": "2026-09-29",
+  "note": "Internal launch review only. Missing fields were not invented. No listing was promoted or edited.",
+  "counts": {
+    "total": 53,
+    "live": 31,
+    "review": 18,
+    "comingSoon": 3,
+    "hold": 1
+  },
+  "addressCompletion": [
+    {
+      "listingId": "ramp-hire-services-louth",
+      "name": "Ramp Hire Services",
+      "currentKnownAddress": {
+        "line1": null,
+        "city": "Louth",
+        "region": "Lincolnshire",
+        "postcode": null,
+        "country": "GB"
+      },
+      "currentKnownAddressLabel": "Louth, Lincolnshire",
+      "sourceUrl": "https://ramphireservices.co.uk/",
+      "missingFields": [
+        "postcode",
+        "street address"
+      ]
+    },
+    {
+      "listingId": "a-team-automotive-chessington",
+      "name": "A-Team Automotive",
+      "currentKnownAddress": {
+        "line1": null,
+        "city": "Chessington",
+        "region": "Greater London / Surrey",
+        "postcode": null,
+        "country": "GB"
+      },
+      "currentKnownAddressLabel": "Chessington, Greater London / Surrey",
+      "sourceUrl": "https://ateamautomotive.co.uk/services-vehicle-repairs",
+      "missingFields": [
+        "postcode",
+        "street address"
+      ]
+    },
+    {
+      "listingId": "paint-shop-pros-buckinghamshire",
+      "name": "The Paint Shop Pros",
+      "currentKnownAddress": {
+        "line1": null,
+        "city": "Buckinghamshire",
+        "region": "Buckinghamshire",
+        "postcode": null,
+        "country": "GB"
+      },
+      "currentKnownAddressLabel": "Buckinghamshire, Buckinghamshire",
+      "sourceUrl": "https://www.thepaintshoppros.co.uk/static-spray-booth-hire/",
+      "missingFields": [
+        "postcode",
+        "street address"
+      ]
+    }
+  ],
+  "secondaryVerification": [
+    {
+      "listingId": "ramp-garage-iver",
+      "name": "Ramp Garage",
+      "sourceUrl": "https://www.linkedin.com/company/rampgarage",
+      "lastVerified": "2026-09-28",
+      "verificationLevel": "secondary",
+      "evidence": "Internal verification level is secondary (Another current published source). Manual re-check 2026-09-28: LinkedIn company page and BizSeek/Wheree profiles still explicitly advertise two ramps for DIY/mobile mechanics on a BYOT basis at Unit S, 11–17 High Street, Iver SL0 9ND. First-party site remains unfetchable; keep secondary verification and display source/verification date. A website URL is recorded: http://www.rampgarage.co.uk.",
+      "suggestedAction": "re-check first-party site / contact operator"
+    },
+    {
+      "listingId": "car-ramp-hire-gravesend",
+      "name": "Car Ramp Hire",
+      "sourceUrl": "https://www.fixter.co.uk/garage/car-ramp-hire",
+      "lastVerified": "2026-09-28",
+      "verificationLevel": "secondary",
+      "evidence": "Internal verification level is secondary (Another current published source). Manual re-check 2026-09-28: Fixter profile still describes a self-service garage with ramp/tools and shows 156 Google reviews; AutoYas likewise states customers work on their own vehicles with a 2-post lift. First-party site not independently reconfirmed this pass; keep secondary. A website URL is recorded: http://www.carramphire.co.uk/.",
+      "suggestedAction": "re-check first-party site / contact operator"
+    },
+    {
+      "listingId": "ubique-motor-diy-helston",
+      "name": "Ubique Motor DIY",
+      "sourceUrl": "https://www.touchlocal.com/business/ubique-motor-diy/14495912",
+      "lastVerified": "2026-09-28",
+      "verificationLevel": "secondary",
+      "evidence": "Internal verification level is secondary (Another current published source). Manual re-check 2026-09-28: TouchLocal still describes Ubique as a DIY garage where customers carry out their own servicing/MOT repairs with tools and optional mechanic help; Locaji shows 2023–2024 customer reviews; LinkedIn lists Mark Perrett as current owner. First-party site still not fetchable. Keep secondary with visible verification date. A website URL is recorded: http://www.ubiquemotordiy.com/.",
+      "suggestedAction": "re-check first-party site / contact operator"
+    }
+  ],
+  "pricingReview": [
+    {
+      "listingId": "rent-a-ramp-cardiff",
+      "name": "Rent A Ramp Cardiff",
+      "pricingSummary": "Website offers short- and longer-duration ramp rental; confirm current price when booking.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "dba-self-service-garage-bognor",
+      "name": "DBA Self Service Garage",
+      "pricingSummary": "Book a bay by the hour, day or week; verify current price before display.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "auto-barn-lovedean",
+      "name": "Auto-Barn Motor Services Rent-a-Ramp",
+      "pricingSummary": "£40/2 hours, £60/4 hours, £70/5 hours.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "2pro-wells",
+      "name": "2PRO Professional Ramp Hire",
+      "pricingSummary": "Supervised professional DIY workspace; current rate available through booking flow.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "sr-nicholls-swinton",
+      "name": "S&R Nicholls Motor Services",
+      "pricingSummary": "Spray-booth hire available; price by enquiry.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "a-team-automotive-chessington",
+      "name": "A-Team Automotive",
+      "pricingSummary": "Hourly, daily and weekly rental options; quote required.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "ramp2rent-chesham",
+      "name": "Ramp2Rent",
+      "pricingSummary": "Online booking available; pricing varies by session.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "car-ramp-hire-gravesend",
+      "name": "Car Ramp Hire",
+      "pricingSummary": "Hourly self-service ramp hire; current public rate not reliably exposed in the sources checked.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "auto-paint-supplies-rainford",
+      "name": "Auto Paint Supplies",
+      "pricingSummary": "Heated booth rented on a day-rate basis (9am–5pm); additional hours charged. Current day price not publicly stated.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "gtg-glasgow-workshop-hire",
+      "name": "GTG Glasgow Workshop Hire",
+      "pricingSummary": "Short- and long-term automotive workshop hire; quote required for Glasgow.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    },
+    {
+      "listingId": "ubique-motor-diy-helston",
+      "name": "Ubique Motor DIY",
+      "pricingSummary": "Self-service workshop hire; current public price not reliably exposed.",
+      "structuredHourlyAbsent": true,
+      "structuredHalfDayAbsent": true,
+      "structuredDayAbsent": true,
+      "structuredValuesAbsent": true
+    }
+  ],
+  "reviewCandidates": [
+    {
+      "listingId": "bold-hydrographics-alcester",
+      "slug": "bold-hydrographics-alcester",
+      "name": "Bold Hydrographics",
+      "publishStatus": "review",
+      "verificationLevel": "secondary",
+      "sourceUrl": "https://warwickshire-county.cataloxy.co.uk/firms/alcester/www.boldhydro.co.uk.htm",
+      "website": "http://www.boldhydro.co.uk/",
+      "lastVerified": "2026-09-28",
+      "whyFlagged": "Has a recorded website, street, town, region, and postcode. Secondary directories associate the business with spray/hydrographics facilities, but current evidence describes operator-provided dipping/painting services rather than confirmed external booth or tank hire.",
+      "remainingEvidence": [
+        "Confirm on the first-party site (or by contacting the operator) that external customers can currently hire the spray booth or hydrographics tank.",
+        "Do not parse or invent pricing; current summary is “Not confirmed.”",
+        "Do not promote from directory wording alone."
+      ],
+      "suggestedAction": "Manual review only. Do not promote automatically."
+    },
+    {
+      "listingId": "diy-garage-stretford",
+      "slug": "diy-garage-stretford",
+      "name": "DIY-Garage.net",
+      "publishStatus": "review",
+      "verificationLevel": "secondary",
+      "sourceUrl": "https://www.hotfrog.co.uk/company/1097295254736896/diy-garage-net/manchester/auto-repairs",
+      "website": "http://www.diy-garage.net/",
+      "lastVerified": "2026-09-28",
+      "whyFlagged": "Has a recorded website and a street, town, region, and postcode. Secondary UK profiles describe a workshop for hire, but the recorded website currently resolves to a different (US) DIY garage brand rather than current UK hire terms.",
+      "remainingEvidence": [
+        "Obtain current first-party UK evidence (or operator confirmation) that external customers can still hire the Stretford workspace.",
+        "Confirm that the Stretford Motorway Estate address is still the operating site.",
+        "Do not promote from Hotfrog/TouchManchester wording alone; current public rates were not verified."
+      ],
+      "suggestedAction": "Manual review only. Do not promote automatically."
+    },
+    {
+      "listingId": "sca-rent-a-ramp-cheltenham",
+      "slug": "sca-rent-a-ramp-cheltenham",
+      "name": "SCA Rent-A-Ramp",
+      "publishStatus": "review",
+      "verificationLevel": "first_party",
+      "sourceUrl": "https://www.rent-a-ramp-cheltenham.co.uk/",
+      "website": "https://www.rent-a-ramp-cheltenham.co.uk/",
+      "lastVerified": "2026-09-28",
+      "whyFlagged": "A website URL is recorded. A street or postcode is recorded. Verification is first_party.",
+      "remainingEvidence": [
+        "Obtain current first-party evidence before any promotion.",
+        "Do not change publish_status automatically."
+      ],
+      "suggestedAction": "Manual review only. Do not promote automatically."
+    },
+    {
+      "listingId": "chameleon-classic-cars-moira",
+      "slug": "chameleon-classic-cars-moira",
+      "name": "Chameleon Classic Cars",
+      "publishStatus": "review",
+      "verificationLevel": "first_party",
+      "sourceUrl": "https://www.chameleonclassiccars.co.uk/rent-our-paint-booth/",
+      "website": "https://www.chameleonclassiccars.co.uk/",
+      "lastVerified": "2026-09-28",
+      "whyFlagged": "A website URL is recorded. A street or postcode is recorded. Verification is first_party.",
+      "remainingEvidence": [
+        "Obtain current first-party evidence before any promotion.",
+        "Do not change publish_status automatically."
+      ],
+      "suggestedAction": "Manual review only. Do not promote automatically."
+    },
+    {
+      "listingId": "fast-fix-autos-burton",
+      "slug": "fast-fix-autos-burton",
+      "name": "Fast Fix Autos & Car Sales",
+      "publishStatus": "review",
+      "verificationLevel": "secondary",
+      "sourceUrl": "https://dallowstreetgarage.co.uk/",
+      "website": "https://dallowstreetgarage.co.uk/",
+      "lastVerified": "2026-09-28",
+      "whyFlagged": "A website URL is recorded. A street or postcode is recorded. Verification is secondary.",
+      "remainingEvidence": [
+        "Obtain current first-party evidence before any promotion.",
+        "Do not change publish_status automatically."
+      ],
+      "suggestedAction": "Manual review only. Do not promote automatically."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "autoworkspace-uk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsx scripts/verify-publishing.ts && next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "verify": "tsx scripts/verify-publishing.ts",
+    "audit:data": "tsx scripts/audit-listings.ts",
+    "audit:links": "tsx scripts/audit-links.ts",
+    "check:env": "tsx scripts/check-env.ts",
+    "report:maintenance": "tsx scripts/maintenance-report.ts",
+    "report:prelaunch": "tsx scripts/write-prelaunch-review.ts"
+  },
+  "dependencies": {
+    "lucide-react": "^1.48.0",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}
