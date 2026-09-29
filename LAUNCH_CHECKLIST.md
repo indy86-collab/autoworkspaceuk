@@ -35,9 +35,9 @@ Manual tasks only. None of these items are marked complete by the production-rea
 
 ## Analytics
 
-- [ ] Add GA4 only when ready
-- [ ] Review cookies / consent if analytics configuration requires it
-- [ ] Do not enable a cookie banner while the site still has no analytics cookies
+- [x] Add Vercel Web Analytics
+- [ ] Enable Web Analytics for the production project in the Vercel dashboard
+- [ ] Review cookies / consent before adding any analytics service that uses cookies
 
 ## Legal
 

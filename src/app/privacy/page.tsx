@@ -28,7 +28,7 @@ export default function PrivacyPage() {
         <h1 className="text-3xl font-semibold tracking-tight text-navy sm:text-4xl">Privacy</h1>
         <div className="mt-6 space-y-4 leading-7 text-slate-700">
           <p>
-            {siteConfig.name} is a public directory of automotive workspace for hire. This page describes the site as it is now. It does not describe a future analytics or advertising setup that has not been added.
+            {siteConfig.name} is a public directory of automotive workspace for hire. This page describes the information the site currently collects and how it is used.
           </p>
           <p>
             There is no account system. You do not sign in, and the site does not ask you to create a profile.
@@ -69,10 +69,19 @@ export default function PrivacyPage() {
             Published listings contain business information researched from public sources: a business name, a place, contact details where they were found, prices, and equipment. They are not personal accounts. A phone number or email on a listing is the business contact that was recorded.
           </p>
           <p>
-            This version of the site does not use analytics cookies and does not show third-party advertising. Links from a listing go to the facility&apos;s own website, or to a phone or email link on your device. Those sites and your email or phone provider have their own practices.
+            We use Vercel Web Analytics to understand aggregated activity such as page views, browser and device type, country, and referring pages. Vercel states that Web Analytics stores anonymised data and does not use cookies. We do not send names, email addresses, phone numbers, or form contents to analytics.
           </p>
           <p>
-            This notice does not claim ISO, ICO, or other compliance certifications. If the site later uses analytics cookies that need a choice, this page will say so. A cookie banner is not shown while the site does not use those cookies.
+            The site does not show third-party advertising. Links from a listing go to the facility&apos;s own website, or to a phone or email link on your device. Those sites and your email or phone provider have their own practices. You can read more in Vercel&apos;s{" "}
+            <a
+              href="https://vercel.com/docs/analytics/privacy-policy"
+              className="font-semibold text-blue-700 hover:text-blue-800"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Web Analytics privacy documentation
+            </a>
+            .
           </p>
         </div>
       </article>

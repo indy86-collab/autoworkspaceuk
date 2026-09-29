@@ -16,6 +16,7 @@
     "report:prelaunch": "tsx scripts/write-prelaunch-review.ts"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "^1.48.0",
     "next": "16.3.6",
     "react": "19.2.8",
