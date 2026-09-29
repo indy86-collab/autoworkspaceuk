@@ -17,17 +17,16 @@ import {
   publishedCountLabel,
 } from "@/lib/listings";
 import { buildMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
-const homeTitle = "AutoWorkspace UK — Find space. Fix more.";
+const homeTitle = "DIY Garages, Ramp Hire & Car Lifts Near You | AutoWorkspace UK";
 
 export const metadata: Metadata = {
   ...buildMetadata({
     title: homeTitle,
-    description: siteConfig.description,
+    description: "Find verified DIY garages, rent-a-ramp bays, car lift hire, workshop space and spray booths across the UK. Compare prices, equipment and who can book.",
     path: "/",
     index: true,
   }),
@@ -70,7 +69,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <p className="eyebrow text-[#f7a46f]">A better place to work on your vehicle</p>
             <h1 className="mt-5 max-w-xl font-display text-5xl font-bold leading-[.93] tracking-[-.05em] sm:text-8xl">Your car.<br /><span className="text-[#f7a46f]">Your rules.</span></h1>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-white/75">Find the bay, lift or workshop that lets you get stuck in. 31 real UK workspaces, checked and ready to explore.</p>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-white/75">Find a DIY garage, rent-a-ramp bay, car lift or workshop near you. 31 real UK workspaces, checked and ready to explore.</p>
           </div>
         </div>
       </section>
@@ -116,7 +115,7 @@ export default function HomePage() {
       {areas.length > 0 ? (
         <section className="border-y border-slate-200 bg-slate-50">
           <div className="site-wrap page-section">
-            <h2 className="text-2xl font-semibold text-navy">Browse automotive workspace around the UK</h2>
+            <h2 className="font-display text-3xl font-bold text-ink">Find DIY garages and ramp hire around the UK</h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
               These links filter the live directory. They are not separate town pages.
             </p>

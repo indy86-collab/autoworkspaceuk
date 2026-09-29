@@ -10,7 +10,7 @@ export const siteConfig = {
   name: "AutoWorkspace UK",
   tagline: "Find space. Fix more.",
   description:
-    "Find verified UK DIY garages, rent-a-ramp facilities, workshop bays, spray booths and automotive workspace.",
+    "Find verified UK DIY garages, rent-a-ramp bays, car lift hire, workshop space and spray booths. Compare prices, equipment and who can book.",
   url: resolveSiteUrl(),
 } as const;
 

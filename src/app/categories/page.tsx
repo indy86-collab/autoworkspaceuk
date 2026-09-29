@@ -7,9 +7,9 @@ import { buildMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Workspace categories",
+  title: "DIY Garages, Ramp Hire, Car Lifts & Workshop Space",
   description:
-    "Browse UK automotive workspace by type, including ramp hire, DIY garages, workshop bays, spray booths, detailing bays and commercial vehicle space.",
+    "Browse verified UK DIY garages, rent-a-ramp bays, car lift hire, automotive workshop space, spray booths and detailing bays.",
   path: "/categories",
   index: true,
 });
@@ -25,9 +25,9 @@ export default function CategoriesPage() {
     <div className="site-wrap py-8">
       <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Categories" }]} />
-      <h1 className="mt-6 text-3xl font-semibold tracking-tight text-navy">Categories</h1>
+      <h1 className="mt-6 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">Find the right automotive workspace</h1>
       <p className="mt-3 max-w-2xl text-slate-700">
-        Each category is a different kind of hired automotive workspace. Counts come from listings currently published in the directory.
+        Compare DIY garages, ramp hire, car lifts, workshop bays and specialist spaces across the UK. Counts come from listings currently published in the directory.
       </p>
       <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((category) => (

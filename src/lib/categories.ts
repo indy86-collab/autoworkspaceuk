@@ -54,11 +54,11 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Rent a Ramp",
     icon: "ramp",
     explanation: "Book a ramp or vehicle lift for a set time and do the work yourself.",
-    seoTitle: "Rent a Ramp",
+    seoTitle: "Rent a Ramp Near You | Car Ramp Hire UK",
     metaDescription:
-      "Rent-a-ramp facilities in the UK where you book a ramp or lift and do the work yourself. Prices and equipment are shown only when they were recorded.",
+      "Find rent-a-ramp and car ramp hire near you in the UK. Compare verified facilities, recorded prices, vehicle lifts, tools and who can book.",
     introduction: [
-      "Rent-a-ramp facilities hire you the lift and the bay around it. You carry out the job, or you bring someone with you. The site is not taking the car in as a repair customer.",
+      "Rent-a-ramp facilities let you hire a car ramp, vehicle lift, and the bay around it by the hour or session. You carry out the job, or you bring someone with you. The site is not taking the car in as a repair customer.",
       "People use these bays for brakes, exhausts, suspension, and underbody inspections where the vehicle needs to be raised safely. What you get for the booking is only what that listing records: the lift, any tools, and the time period. Access rules, insurance, and disposal of old parts differ by site.",
     ],
     faqs: [
@@ -86,11 +86,11 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "DIY Garage",
     icon: "diy",
     explanation: "A garage bay you hire to work on your own vehicle, without handing the job to a technician.",
-    seoTitle: "DIY and Self-Service Garages",
+    seoTitle: "DIY Garage Near You | Self-Service Garage Hire UK",
     metaDescription:
-      "Self-service garages and DIY bays in the UK that hire workspace so you can work on your own vehicle. Each listing shows who can book and what equipment is recorded.",
+      "Find a DIY garage or self-service garage near you in the UK. Compare workspace, vehicle lifts, tools, prices and booking audiences.",
     introduction: [
-      "A self-service garage is workspace for the vehicle owner. Staff may unlock the bay and explain the house rules. They are not booked to diagnose or repair the car for you.",
+      "A DIY or self-service garage is workspace you hire to work on your own car. Staff may unlock the bay and explain the house rules. They are not booked to diagnose or repair the car for you.",
       "These sites overlap with rent-a-ramp, but the emphasis is the hired bay itself: floor space, light, and sometimes a basic tool set. A listing appears here when the record is filed under self-service or DIY garage use. It is not an MOT station unless the facility separately offers testing, and this directory does not treat workspace hire as an MOT booking.",
     ],
     faqs: [
@@ -118,9 +118,9 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Workshop Hire",
     icon: "workshop",
     explanation: "A working workshop bay or unit hired by the day, week, or month.",
-    seoTitle: "Workshop Hire",
+    seoTitle: "Automotive Workshop Hire | Bays for Mechanics UK",
     metaDescription:
-      "Automotive workshops hired by the day, week, or longer for trade users and, where the listing says so, private hirers. Rates and equipment are shown only when recorded.",
+      "Find automotive workshop hire and garage bays for mobile mechanics, trade users and eligible private hirers. Compare recorded equipment, rates and access.",
     introduction: [
       "Workshop hire is for people who need a working automotive space for longer than a single job. Mobile technicians, new businesses, and trades without their own unit are the usual users. Some sites also accept a private hirer. The audience label on the listing is the record of who it is aimed at.",
       "A workshop booking can mean one bay inside a shared building, or a fuller unit with its own access. The listing does not imply an office, storage, or waste contract unless those things are written in the equipment or notes. Ask about insurance, power, and what must be left as you found it.",
@@ -150,9 +150,9 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Garage Bay Hire",
     icon: "bay",
     explanation: "One working bay inside a garage, booked without taking the whole building.",
-    seoTitle: "Garage Bay Hire",
+    seoTitle: "Garage Space to Work on Your Car | Bay Hire UK",
     metaDescription:
-      "Single garage bays and garage space for hire in the UK, without taking the whole building. A lift is mentioned only when that listing records one.",
+      "Find garage space to work on your car, including single bays for hire across the UK. Compare recorded lifts, tools, prices and booking terms.",
     introduction: [
       "Garage bay hire is a single working space: enough room for a vehicle, a sound floor, and usually access to a lift or tools that are listed for that site. You are renting the bay, not the business.",
       "It suits a job that needs to stay on a proper floor while you work, including work a driveway cannot safely support. Guest access, overnight storage, and parking for a second vehicle are not included unless the listing says so.",
@@ -182,9 +182,9 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Spray Booth",
     icon: "spray",
     explanation: "A controlled booth for paint and refinishing, separate from a general ramp bay.",
-    seoTitle: "Spray Booth Hire",
+    seoTitle: "Spray Booth Hire Near You | Paint Booth Rental UK",
     metaDescription:
-      "Spray booths and prep bays hired for paint and refinishing. Paint and materials are not assumed, and trade-only booths are labelled from the listing.",
+      "Find spray booth hire and paint booth rental near you in the UK. Compare prep space, recorded equipment, prices and trade access.",
     introduction: [
       "A spray booth is hired for paint and refinishing. It is a controlled space with extraction and filtration that a normal ramp bay does not provide. Listings here are for that kind of facility, not for a garage that happens to own a spray gun.",
       "Booth hire is often trade-only because of coatings, insurance, and the standard of preparation required. A private user should book only where the audience includes consumer use, and should confirm which materials and masking the hire includes. Nothing in the price should be read as including paint, panels, or a painter.",
@@ -214,7 +214,7 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Detailing Bay",
     icon: "detail",
     explanation: "A bay set up for washing, decontamination, and interior work.",
-    seoTitle: "Detailing Bay Hire",
+    seoTitle: "Detailing Bay Hire | Car Detailing Workspace UK",
     metaDescription:
       "Detailing bays hired for washing, decontamination, and interior work. The equipment list is the limit of what the directory claims is on site.",
     introduction: [
@@ -246,7 +246,7 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Motorcycle",
     icon: "motorcycle",
     explanation: "Space set up for motorcycles, including stands or a bike lift where listed.",
-    seoTitle: "Motorcycle Workspace",
+    seoTitle: "Motorcycle Workshop Hire | DIY Bike Workspace UK",
     metaDescription:
       "Workspace that accepts motorcycles, including a bike lift or stand where one is listed. A car ramp is not treated as a motorcycle bay on its own.",
     introduction: [
@@ -310,9 +310,9 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Vehicle Lift",
     icon: "lift",
     explanation: "Hire of a vehicle lift, either in a bay you visit or as equipment the listing describes.",
-    seoTitle: "Vehicle Lift Hire",
+    seoTitle: "Car Lift Hire Near You | Vehicle Lift Hire UK",
     metaDescription:
-      "Vehicle lifts hired in a bay you visit, or mobile lifting equipment where the listing says it is hired out. This is not an MOT booking.",
+      "Find car lift and vehicle lift hire near you, including two-post and four-post lifts in UK workshop bays. This is not an MOT booking.",
     introduction: [
       "Vehicle lift hire means the lift is the thing being hired. Sometimes that is a two-post or four-post lift inside a bay you visit. Sometimes a business hires out mobile lifting equipment. The address and notes say which of those the record is. This directory does not assume the lift is delivered.",
       "A listing here is not a certificate that the lift is suitable for your vehicle, and it is not an MOT bay. Ask the operator about the inspection of the equipment and the weight rating. Use the price only when a rate is printed on the listing.",
@@ -342,7 +342,7 @@ const categories: readonly CategoryDefinition[] = [
     shortName: "Commercial / HGV",
     icon: "van",
     explanation: "Workshop space recorded for heavier vehicles than a standard car bay, including commercial and HGV work where the listing says so.",
-    seoTitle: "Commercial and HGV Workspace",
+    seoTitle: "HGV Workshop Hire | Commercial Vehicle Workspace UK",
     metaDescription:
       "Commercial and HGV workshop space where a listing records heavier-vehicle access. Confirm height, length, and weight with the facility before booking.",
     introduction: [
