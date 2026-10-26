@@ -1,0 +1,666 @@
+{
+  "reviewed_on": "2026-10-26",
+  "scope": "All 53 existing records plus discovery searches for new UK automotive workspace hire. Published webpage evidence, not telephone confirmation or proof of bookable capacity.",
+  "before": {
+    "live": 31,
+    "review": 18,
+    "coming_soon": 3,
+    "hold": 1
+  },
+  "after": {
+    "live": 32,
+    "hold": 4,
+    "coming_soon": 4,
+    "review": 14
+  },
+  "image_provenance": [
+    {
+      "listing_id": "vdr-auto-dundee",
+      "image_url": "https://vdrauto.co.uk/wp-content/themes/vdr-auto/assets/img/vdr-auto-black-audi-dundee-1280.webp",
+      "source_page": "https://vdrauto.co.uk/ramp-rental-dundee/",
+      "checked_on": "2026-10-26",
+      "validation": "Image embedded on the operator website; image URL returned HTTP 200 and image/webp."
+    },
+    {
+      "listing_id": "auto-opulence-norwich",
+      "image_url": "https://autoopulence.co.uk/images/business-sectors/trade-detailer-bay-hire-norwich.webp",
+      "source_page": "https://autoopulence.co.uk/business-sectors/trade-detailer-bay-hire",
+      "checked_on": "2026-10-26",
+      "validation": "Image embedded on the operator website; image URL returned HTTP 200 and image/webp."
+    }
+  ],
+  "records": [
+    {
+      "id": "atc-autocare-liverpool",
+      "name": "ATC Autocare",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.atcautocare.com/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "rent-a-ramp-cardiff",
+      "name": "Rent A Ramp Cardiff",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.rentarampcardiff.com/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "gtg-edinburgh-workshop-hire",
+      "name": "GTG Edinburgh Workshop Hire",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://gtg.co.uk/venue-hire/workshop-hire-in-edinburgh/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "gtg-wolverhampton-workshop-hire",
+      "name": "GTG Wolverhampton Workshop Hire",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://gtg.co.uk/venue-hire/workshop-hire-in-wolverhampton/",
+      "additional_sources": [],
+      "outcome": "Current source targets manufacturers, fleet partners and automotive organisations; removed unsupported consumer eligibility.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "anyday-rentals-heanor",
+      "name": "Anyday Rentals Rent-a-Ramp",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://anydayrentals.co.uk/rent-a-ramp/",
+      "additional_sources": [
+        "https://anydayrentals.co.uk/rent-a-ramp/",
+        "https://anydayrentals.co.uk/ramp-hire/"
+      ],
+      "outcome": "Two reachable first-party pages conflict on rates, lift specification and supplied equipment. Removed numeric prices and unconfirmed tools rather than choosing a rate.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "sca-rent-a-ramp-cheltenham",
+      "name": "SCA Rent-A-Ramp",
+      "previous_status": "review",
+      "status": "hold",
+      "source_url": "https://www.rent-a-ramp-cheltenham.co.uk/",
+      "additional_sources": [],
+      "outcome": "The homepage explicitly states the rent-a-ramp service is closed.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "the-car-bunker-newport",
+      "name": "The Car Bunker",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.thecarbunker.co.uk/book-online",
+      "additional_sources": [],
+      "outcome": "Confirmed £20 hourly starting rate on the actual booking page; welding rental costs extra.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "east-coast-cars-hoveton",
+      "name": "East Coast Cars Rent-a-Lift",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://eastcoastcars.co.uk/lift-ramp-hire-service/",
+      "additional_sources": [],
+      "outcome": "Added the published 3,000kg lift limit and booking restrictions.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "dba-self-service-garage-bognor",
+      "name": "DBA Self Service Garage",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://bognorselfservicegarage.co.uk/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "rent-a-ramp-northeast-stanley",
+      "name": "Rent A Ramp Northeast",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://rentarampnortheast.com/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "auto-barn-lovedean",
+      "name": "Auto-Barn Motor Services Rent-a-Ramp",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://autobarnmotorservices.co.uk/rent-a-ramp/",
+      "additional_sources": [],
+      "outcome": "Kept the published session prices without converting a two-hour package into an hourly rate; added Saturday-only hire.",
+      "direct_fetch": "HTTP Error 403: Forbidden",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "roman-motors-stratford",
+      "name": "Roman Motors Ramp Hire",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://romanmotors.co.uk/prices/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "2pro-wells",
+      "name": "2PRO Professional Ramp Hire",
+      "previous_status": "live",
+      "status": "coming_soon",
+      "source_url": "https://www.2pro.co.uk/",
+      "additional_sources": [
+        "https://www.2pro.co.uk/",
+        "https://www.2pro.co.uk/assets/index-DjYiEKa6.js"
+      ],
+      "outcome": "Current homepage and shipped website content label ramp hire Coming Soon; older indexed Book Workspace wording is superseded.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "rent-a-ramp-cumbria",
+      "name": "Rent-A-Ramp Cumbria",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.rentarampcumbrialtd.co.uk/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "borders-ramp-hire",
+      "name": "Borders Ramp Hire / Club Japan Imports",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.clubjapanimports.com/store/Workshop-Hire-c143921530",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "ramp-hire-services-louth",
+      "name": "Ramp Hire Services",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://ramphireservices.co.uk/",
+      "additional_sources": [],
+      "outcome": "Expanded the confirmed weekday/weekend prices without inventing a workshop address.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "tesla21-weymouth",
+      "name": "Tesla21 Rent-a-Ramp",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://tesla21.uk/rent-a-ramp/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "weil-king-blackpool",
+      "name": "Weil-King Custom Garage Ramp Rental",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.weil-king.co.uk/ramp-rental",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "HTTP Error 403: Forbidden",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "ufixit-worcester",
+      "name": "uFIXit DIY Paint Spraying",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.ufixit.uk/book-online",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "dream-machine-workshop-bidford",
+      "name": "The Dream Machine Workshop",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.the-dream-machine-workshop.com/book-here",
+      "additional_sources": [],
+      "outcome": "Deduplicated equipment and added confirmed booth session prices alongside workshop tier pricing.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "sr-nicholls-swinton",
+      "name": "S&R Nicholls Motor Services",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://nichollsmotorservices.co.uk/services/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "a-team-automotive-chessington",
+      "name": "A-Team Automotive",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://ateamautomotive.co.uk/services-vehicle-repairs",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "spray-masters-derby",
+      "name": "Spray Masters",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.spraymastersuk.co.uk/spray-painting-booth-hire-near-me/",
+      "additional_sources": [],
+      "outcome": "Corrected Perkins Way to Perkins Yard and added the published operator phone/email.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "paint-shop-pros-buckinghamshire",
+      "name": "The Paint Shop Pros",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.thepaintshoppros.co.uk/static-spray-booth-hire/",
+      "additional_sources": [],
+      "outcome": "Direct website DNS lookup failed and browser fetch returned 502. Search index retains the hire page, but this is insufficient for a new verification date. Kept the existing listing and date; operator confirmation is needed. No closure inferred.",
+      "direct_fetch": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "rent-a-ramp-letchworth",
+      "name": "Rent A Ramp Letchworth",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://epageuk.com/rentarampletchworth",
+      "additional_sources": [],
+      "outcome": "ePageUK retains hire wording but does not establish current first-party operating terms. Keep review.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-25"
+    },
+    {
+      "id": "clean-away-services-braintree",
+      "name": "Clean Away Services",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.ukmotoringdirectory.co.uk/clean-awayservices",
+      "additional_sources": [],
+      "outcome": "UK Motoring Directory retains hire wording including future-tense facilities. Keep review; operator confirmation still missing.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "rent-a-ramp-darlington",
+      "name": "Rent A Ramp Darlington",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.scoot.co.uk/England/County-Durham/Darlington/Rent-A-Ramp-16751580.html",
+      "additional_sources": [],
+      "outcome": "Scoot retains historic DIY hire wording and inconsistent prices/hours; it announces its own October 2026 shutdown. Keep review; obtain operator source.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "db-car-lift-hire-sheffield",
+      "name": "DB Car Lift Hire & Auto-Spares",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://toplocalplaces.com/united-kingdom/sheffield/home-improvement/db-car-lift-hire-auto-spares/266587780125607",
+      "additional_sources": [
+        "https://www.bizseek.co.uk/db-car-lift-hire-auto-spares-07840-411170",
+        "https://www.reddit.com/r/sheffield/comments/1lsxu0w/car_ramp_hire/"
+      ],
+      "outcome": "Mirrored advert remains online, but BizSeek gives a different address and a November 2025 forum reply reports closure. Closure is unconfirmed. Keep review; do not promote without operator confirmation.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "bedminster-diy-workshop-bristol",
+      "name": "DIY Vehicle Workshop & Ramp Hire — Bedminster",
+      "previous_status": "review",
+      "status": "hold",
+      "source_url": "https://www.gumtree.com/p/commercial-property-to-rent/diy-vehicle-workshop-ramp-hire-in-bedminster-bristol.-evenings-weekends-and-holidays-available./1512159880",
+      "additional_sources": [],
+      "outcome": "The recorded Gumtree advert now returns HTTP 410 Gone. Availability is unconfirmed; this is not proof the operator has closed.",
+      "direct_fetch": "HTTP Error 410: Gone",
+      "last_verified": "2026-09-25"
+    },
+    {
+      "id": "halesowen-workshop-ramp-hire",
+      "name": "Garage Workshop Ramp Hire — Halesowen",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.gumtree.com/p/garage-parking-to-rent/garage-workshop-car-space-or-ramp-hire-halesowen-birmingham-/1457289400",
+      "additional_sources": [],
+      "outcome": "Consolidated the duplicate advert into this existing record; operator and exact premises still unverified.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "drivers-workshop-birmingham",
+      "name": "Drivers Workshop",
+      "previous_status": "coming_soon",
+      "status": "coming_soon",
+      "source_url": "https://driversworkshop.co.uk/",
+      "additional_sources": [],
+      "outcome": "Website still collects waitlist sign-ups without confirmed operating premises; retain coming soon.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "rampready-doncaster",
+      "name": "RampReady",
+      "previous_status": "coming_soon",
+      "status": "coming_soon",
+      "source_url": "https://rampready.co.uk/",
+      "additional_sources": [],
+      "outcome": "Homepage still displays Coming Soon and a prelaunch survey despite sample prices; retain coming soon.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "elev8-newport",
+      "name": "ELEV8 Newport",
+      "previous_status": "coming_soon",
+      "status": "coming_soon",
+      "source_url": "https://www.elev8newport.co.uk/",
+      "additional_sources": [],
+      "outcome": "Homepage still explicitly says Opening Soon and booking is coming soon.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "this-is-your-garage-culham",
+      "name": "This Is Your Garage",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://thisisyourgarage.com/about/workshop/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "ramp2rent-chesham",
+      "name": "Ramp2Rent",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.ramp2rent.com/",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "ramp-garage-iver",
+      "name": "Ramp Garage",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.linkedin.com/company/rampgarage",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "car-ramp-hire-gravesend",
+      "name": "Car Ramp Hire",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.fixter.co.uk/garage/car-ramp-hire",
+      "additional_sources": [
+        "https://www.fixter.co.uk/garage/car-ramp-hire",
+        "http://www.carramphire.co.uk/"
+      ],
+      "outcome": "Removed recorded website because it now serves unrelated casino content. Retained live only on the current Fixter self-service profile, with secondary verification.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "uk-auto-centre-high-wycombe",
+      "name": "UK Auto Centre Ltd",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.trustatrader.com/traders/uk-auto-centre-ltd-spray-booth-hire-high-wycombe",
+      "additional_sources": [],
+      "outcome": "Recorded TrustATrader URL now redirects to a generic category with no related service. Keep review; old hire claim is not reconfirmed.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-25"
+    },
+    {
+      "id": "chameleon-classic-cars-moira",
+      "name": "Chameleon Classic Cars",
+      "previous_status": "review",
+      "status": "hold",
+      "source_url": "https://www.chameleonclassiccars.co.uk/rent-our-paint-booth/",
+      "additional_sources": [],
+      "outcome": "The booth-hire page explicitly states hire is no longer available.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "fast-fix-autos-burton",
+      "name": "Fast Fix Autos & Car Sales",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://dallowstreetgarage.co.uk/",
+      "additional_sources": [],
+      "outcome": "Recorded premises now market Dallow Street Garage repair/MOT services; no external hire offer found. Keep review.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "id": "halesowen-ramp-space-hire",
+      "name": "Garage Workshop Ramp / Car Space Hire — Halesowen",
+      "previous_status": "review",
+      "status": "deleted_duplicate",
+      "source_url": "https://www.gumtree.com/p/garage-parking-to-rent/garage-workshop-car-space-or-ramp-hire-halesowen-birmingham-/1457289400",
+      "additional_sources": [],
+      "outcome": "Deleted duplicate of halesowen-workshop-ramp-hire: identical Gumtree advert ID 1457289400.",
+      "direct_fetch": "retrieved",
+      "last_verified": null
+    },
+    {
+      "id": "bold-hydrographics-alcester",
+      "name": "Bold Hydrographics",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://warwickshire-county.cataloxy.co.uk/firms/alcester/www.boldhydro.co.uk.htm",
+      "additional_sources": [],
+      "outcome": "Recorded website DNS lookup failed; no first-party external equipment-hire confirmation. Keep review.",
+      "direct_fetch": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "id": "auto-paint-supplies-rainford",
+      "name": "Auto Paint Supplies",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.autopaint-supplies.co.uk/pages/spray-booth-hire",
+      "additional_sources": [],
+      "outcome": "Hire offer reconfirmed on the recorded source; retain publication.",
+      "direct_fetch": "HTTP Error 429: Too Many Requests",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "macs-auto-detailing-leigh",
+      "name": "MACS Auto Detailing",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://macsautodetailing.co.uk/products/macs-detailing-bay-day-booking",
+      "additional_sources": [],
+      "outcome": "Current product and homepage agree on £80 for the full-day bay; replaced obsolete £80/£100 conflict wording.",
+      "direct_fetch": "HTTP Error 429: Too Many Requests",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "autopia-service-centres-darwen",
+      "name": "Autopia Service Centres",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.ukmotoringdirectory.co.uk/autopiaservice-centres",
+      "additional_sources": [],
+      "outcome": "UK Motoring Directory retains hourly rental wording. No current first-party service confirmation; keep review.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-25"
+    },
+    {
+      "id": "diy-garage-stretford",
+      "name": "DIY-Garage.net",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.hotfrog.co.uk/company/1097295254736896/diy-garage-net/manchester/auto-repairs",
+      "additional_sources": [],
+      "outcome": "Recorded website DNS lookup failed this pass. Previous review notes identify a different US brand at the domain. Keep review; no current UK operator evidence.",
+      "direct_fetch": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "id": "rent-a-ramp-wrexham",
+      "name": "Rent a Ramp",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.thomsonlocal.com/search/garage-services/wrexham/rent-a-ramp/932315/07716497203",
+      "additional_sources": [],
+      "outcome": "Directories disagree on addresses and one describes a self-service car wash. Do not conflate these businesses or promote without operator evidence.",
+      "direct_fetch": "HTTP Error 403: Forbidden",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "rent-a-ramp-halifax",
+      "name": "Rent A Ramp Halifax",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.near.co.uk/3274885-Rent-A-Ramp/",
+      "additional_sources": [],
+      "outcome": "Recorded directory blocked automated access (403). No newly confirmed operator source; keep review.",
+      "direct_fetch": "HTTP Error 403: Forbidden",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "gtg-glasgow-workshop-hire",
+      "name": "GTG Glasgow Workshop Hire",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://gtg.co.uk/venue-hire/meeting-room-hire-in-glasgow/",
+      "additional_sources": [],
+      "outcome": "GTG Glasgow venue page explicitly confirms short- and long-term automotive workshop hire; meeting-room prices do not apply.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "auto-diy-glasgow",
+      "name": "Auto DIY",
+      "previous_status": "hold",
+      "status": "hold",
+      "source_url": "https://www.reddit.com/r/glasgow/comments/1sgotox/diy_self_service_garage_for_hire/",
+      "additional_sources": [],
+      "outcome": "Recorded operator WordPress blog is historical (2010 posts); a current calendar does not establish current operation. Keep hold.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-24"
+    },
+    {
+      "id": "ubique-motor-diy-helston",
+      "name": "Ubique Motor DIY",
+      "previous_status": "live",
+      "status": "live",
+      "source_url": "https://www.touchlocal.com/business/ubique-motor-diy/14495912",
+      "additional_sources": [
+        "https://www.yell.com/biz/ubique-motor-diy-helston-8215865/",
+        "https://www.hpacademy.com/forum/member-introductions/show/hello-from-helston-cornwall-uk/"
+      ],
+      "outcome": "Recorded website DNS lookup failed and TouchLocal source is inaccessible. Yell retains DIY customer reviews and the operator describes self-service access on HP Academy, but neither establishes fresh operating terms. Kept secondary status and previous verification date; confirm with operator.",
+      "direct_fetch": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "last_verified": "2026-09-28"
+    },
+    {
+      "id": "u-fix-bridgwater",
+      "name": "U Fix Do it Yourself Garage",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.scoot.co.uk/England/Somerset/Bridgwater/U-Fix-13466991.html",
+      "additional_sources": [],
+      "outcome": "Scoot retains DIY hire wording but announces its own October 2026 shutdown. This is not an operator closure notice. Keep review; obtain operator source.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-25"
+    },
+    {
+      "id": "workshop-ramp-bay-hire-ipswich",
+      "name": "Workshop Ramp & Bay Hire — IP10 Suffolk",
+      "previous_status": "review",
+      "status": "review",
+      "source_url": "https://www.gumtree.com/p/car-part-accessories/workshop-ramp-bay-hire/1803129198",
+      "additional_sources": [],
+      "outcome": "Gumtree advert still offers ramp/bay hire, but operator identity and exact premises remain unverified. Keep review.",
+      "direct_fetch": "retrieved",
+      "last_verified": "2026-09-25"
+    },
+    {
+      "id": "vdr-auto-dundee",
+      "name": "VDR Auto Ramp Rental",
+      "previous_status": null,
+      "status": "live",
+      "source_url": "https://vdrauto.co.uk/ramp-rental-dundee/",
+      "additional_sources": [],
+      "outcome": "Added live from explicit first-party hire offer, published contact details and own-website image.",
+      "direct_fetch": "researched separately",
+      "last_verified": "2026-10-26"
+    },
+    {
+      "id": "auto-opulence-norwich",
+      "name": "Auto Opulence Detailing Bay Hire",
+      "previous_status": null,
+      "status": "live",
+      "source_url": "https://autoopulence.co.uk/category/valet-bay-hire",
+      "additional_sources": [
+        "https://autoopulence.co.uk/category/valet-bay-hire",
+        "https://autoopulence.co.uk/business-sectors/trade-detailer-bay-hire"
+      ],
+      "outcome": "Added live from explicit first-party hire offer, published contact details and own-website image.",
+      "direct_fetch": "researched separately",
+      "last_verified": "2026-10-26"
+    }
+  ],
+  "validation": {
+    "publishing_checks": "passed",
+    "data_audit": "passed; existing optional address/contact gaps and secondary verification remain",
+    "production_build": "passed",
+    "lint": "passed",
+    "typecheck": "passed",
+    "diff_whitespace": "passed",
+    "new_images": "Both URLs returned HTTP 200 with image/webp; each URL appears in its operator website HTML."
+  }
+}
