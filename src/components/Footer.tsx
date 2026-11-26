@@ -17,7 +17,7 @@ const businessLinks = [
 const aboutLinks = [
   { href: "/about", label: "About" },
   { href: "/methodology", label: "Methodology" },
-  { href: "/privacy", label: "Privacy" },
+  { href: "/privacy", label: "Privacy", reload: true },
   { href: "/terms", label: "Terms" },
 ];
 
@@ -53,7 +53,7 @@ function FooterGroup({
   links,
 }: {
   title: string;
-  links: readonly { href: string; label: string }[];
+  links: readonly { href: string; label: string; reload?: boolean }[];
 }) {
   return (
     <nav aria-label={title}>
@@ -61,9 +61,15 @@ function FooterGroup({
       <ul className="mt-3 space-y-2 text-sm">
         {links.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className="text-slate-700 hover:text-blue-700">
-              {link.label}
-            </Link>
+            {link.reload ? (
+              <a href={link.href} className="text-slate-700 hover:text-blue-700">
+                {link.label}
+              </a>
+            ) : (
+              <Link href={link.href} className="text-slate-700 hover:text-blue-700">
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

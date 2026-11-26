@@ -77,7 +77,7 @@ export default function PrivacyPage() {
             We use Vercel Web Analytics to understand aggregated activity such as page views, browser and device type, country, and referring pages. Vercel states that Web Analytics stores anonymised data and does not use cookies. We do not send names, email addresses, phone numbers, or form contents to analytics.
           </p>
           <p>
-            The site does not show third-party advertising. Links from a listing go to the facility&apos;s own website, or to a phone or email link on your device. Those sites and your email or phone provider have their own practices. You can read more in Vercel&apos;s{" "}
+            You can read more in Vercel&apos;s{" "}
             <a
               href="https://vercel.com/docs/analytics/privacy-policy"
               className="font-semibold text-blue-700 hover:text-blue-800"
@@ -87,6 +87,27 @@ export default function PrivacyPage() {
               Web Analytics privacy documentation
             </a>
             .
+          </p>
+
+          <h2 className="pt-4 text-xl font-semibold text-navy">Advertising and consent</h2>
+          <p>
+            Our directory and guide pages use Google AdSense. When the Google script loads, your browser sends
+            Google information such as your IP address and the page you&apos;re visiting. Google and its advertising
+            partners may use cookies or similar technologies for advertising and measurement, depending on your
+            choices. Read more about{" "}
+            <a className="font-semibold text-blue-700 hover:underline" href="https://policies.google.com/technologies/partner-sites?hl=en-GB">
+              how Google uses information from partner sites
+            </a>
+            .
+          </p>
+          <p>
+            Visitors in the UK, the European Economic Area and Switzerland can give or decline consent, or manage
+            their choices in Google&apos;s consent message. To change or withdraw your consent, use Privacy and cookie
+            settings at the bottom of a directory page where the message is available.
+          </p>
+          <p>
+            Links from a listing go to the facility&apos;s website, or open a phone or email app on your device.
+            Those sites and providers have their own privacy practices.
           </p>
         </div>
       </article>

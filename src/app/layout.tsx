@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: { icon: "/icon.svg", apple: "/apple-icon" },
+  other: { "google-adsense-account": "ca-pub-9868896840591922" },
 };
 
 export const viewport: Viewport = {
