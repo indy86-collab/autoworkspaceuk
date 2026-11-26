@@ -5,13 +5,13 @@ import { MethodologyNote } from "@/components/content/MethodologyNote";
 import { JsonLd } from "@/components/JsonLd";
 import { ListingGrid } from "@/components/ListingGrid";
 import { HomeJobFinder } from "@/components/HomeJobFinder";
+import { getWorkspaceReport } from "@/lib/dataset-insights";
 import { websiteJsonLd } from "@/lib/json-ld";
 import { getHomeGuides } from "@/lib/guides";
 import {
   getFeaturedListings,
   getHomepageCategories,
   getListingsByCategory,
-  getLiveListings,
   getPopulatedCategories,
   getPopulatedDiscoveryAreas,
   publishedCountLabel,
@@ -56,7 +56,7 @@ export default function HomePage() {
   const categories = getHomepageCategories();
   const featured = getFeaturedListings(6);
   const guides = getHomeGuides();
-  const live = getLiveListings();
+  const report = getWorkspaceReport();
   const areas = getPopulatedDiscoveryAreas();
 
   return (
@@ -65,11 +65,13 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-ink text-white">
         <div className="absolute inset-0 opacity-65"><Image src="/images/home-workbench.png" alt="" fill priority sizes="100vw" className="object-cover" /></div>
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/20" />
-        <div className="site-wrap relative flex min-h-[540px] items-end py-20 sm:min-h-[620px] lg:items-center">
+        <div className="site-wrap relative flex min-h-[540px] items-end pb-24 pt-20 sm:min-h-[620px] sm:pb-28 lg:items-center">
           <div className="max-w-2xl">
-            <p className="eyebrow text-[#f7a46f]">A better place to work on your vehicle</p>
-            <h1 className="mt-5 max-w-xl font-display text-5xl font-bold leading-[.93] tracking-[-.05em] sm:text-8xl">Your car.<br /><span className="text-[#f7a46f]">Your rules.</span></h1>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-white/75">Find a DIY garage, rent-a-ramp bay, car lift or workshop near you. 31 real UK workspaces, checked and ready to explore.</p>
+            <h1 className="max-w-xl font-display text-5xl font-bold leading-[.98] tracking-[-.05em] sm:text-7xl">DIY garages and <span className="text-[#f7a46f]">ramp hire</span> across the UK</h1>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-white/85">Find somewhere to work on your vehicle. Compare published hire prices, lift and bay equipment, and who can book.</p>
+            <Link href="/browse" className="mt-7 inline-flex min-h-12 items-center rounded-lg bg-white px-5 py-3 font-semibold text-ink hover:bg-orange-50">
+              Browse workspaces
+            </Link>
           </div>
         </div>
       </section>
@@ -78,8 +80,10 @@ export default function HomePage() {
 
       <section className="site-wrap -mt-2 pb-10">
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#dedbd4] bg-white/50 px-5 py-4 text-sm text-ink/65">
-          <span><strong className="text-ink">{live.length}</strong> verified workspaces across <strong className="text-ink">23</strong> regions</span>
-          <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[#4f9b73]" /> Last checked this week</span>
+          <span><strong className="text-ink">{report.liveCount}</strong> workspaces across <strong className="text-ink">{report.regionCount}</strong> regions</span>
+          {report.latestVerified ? (
+            <span>Most recent listing check <time dateTime={report.latestVerified}>{report.latestVerifiedLabel}</time></span>
+          ) : null}
         </div>
       </section>
 
@@ -117,7 +121,7 @@ export default function HomePage() {
           <div className="site-wrap page-section">
             <h2 className="font-display text-3xl font-bold text-ink">Find DIY garages and ramp hire around the UK</h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-              These links filter the live directory. They are not separate town pages.
+              Choose a region to see the workspaces you can compare there.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {areas.map(({ area, listings }) => (

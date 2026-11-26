@@ -1,3 +1,4 @@
+import { listingEditorial } from "@/content/listing-editorial";
 import { addressLines as formatAddressLines, formatPlace as formatPlaceLabel } from "@/lib/address";
 import { publicCategoriesForListing, publicCategoryOf } from "@/lib/categories";
 import { displayEquipmentList } from "@/lib/equipment";
@@ -87,7 +88,7 @@ function formatList(items: readonly string[]): string {
 
 export function publicOverview(listing: Listing): string {
   const parts: string[] = [];
-  const notes = listing.notes ? cleanResearchText(listing.notes) : "";
+  const notes = listingEditorial[listing.slug]?.overview ?? (listing.notes ? cleanResearchText(listing.notes) : "");
   if (notes) {
     parts.push(notes);
   } else if (listing.equipment.length > 0) {

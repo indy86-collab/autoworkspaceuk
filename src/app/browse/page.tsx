@@ -12,6 +12,7 @@ import { parseSortId, sortListings } from "@/lib/ranking";
 import { fallbackListings, filterListings, hasActiveQuery, parseDirectoryQuery } from "@/lib/search";
 import { buildMetadata } from "@/lib/seo";
 import { getDiscoveryArea } from "@/lib/areas";
+import { publicCategoryOf } from "@/lib/categories";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildMetadata({
@@ -31,17 +32,17 @@ export default async function BrowsePage(props: PageProps<"/browse">) {
   const listings = sortListings(filterListings(live, query), sort);
   const filtered = hasActiveQuery(query);
   const area = query.area ? getDiscoveryArea(query.area) : undefined;
+  const category = publicCategoryOf(query.category);
+  const heading = category?.name ?? "Browse workspace";
   const suggestions = listings.length === 0 ? fallbackListings(live, query, 3) : [];
   const sources = getLocationSuggestionSources();
   const suggestionAddresses = live.map((listing) => listing.address);
 
   return (
     <div className="site-wrap py-8">
-      <h1 className="text-3xl font-semibold tracking-tight text-navy">Browse workspace</h1>
+      <h1 className="text-3xl font-semibold tracking-tight text-navy">{heading}{area ? ` in ${area.name}` : ""}</h1>
       <p className="mt-3 max-w-2xl text-slate-700">
-        {area
-          ? `Verified automotive workspace in ${area.name}.`
-          : "Only verified automotive workspaces are shown."}
+        Compare prices, equipment and who can book. Open a listing for its hire terms and operator contact details.
       </p>
       <div className="mt-8 grid gap-8 lg:grid-cols-[17.5rem_minmax(0,1fr)]">
         <SearchFilters

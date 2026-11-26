@@ -104,7 +104,7 @@ export default function MethodologyPage() {
               <Link href="/report" className="font-semibold text-blue-700 hover:text-blue-800">
                 Report incorrect information
               </Link>
-              . That form does not currently send or store a report. It is the place a correction is meant to be flagged from the listing.
+              . Include the affected detail and any source that helps us check the correction.
             </p>
           </div>
         </section>

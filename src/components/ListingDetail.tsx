@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { NearbyListings } from "@/components/NearbyListings";
 import { PriceDisplay } from "@/components/PriceDisplay";
 import { VerificationBadge } from "@/components/VerificationBadge";
+import { listingEditorial } from "@/content/listing-editorial";
 import { publicAddress } from "@/lib/address";
 import { publicCategoryOf } from "@/lib/categories";
 import { audienceLabel, formatVerifiedDate, priceRows } from "@/lib/format";
@@ -11,11 +12,11 @@ import { breadcrumbJsonLd, localBusinessJsonLd } from "@/lib/json-ld";
 import { getGuideForListing } from "@/lib/guides";
 import { getNearbyAlternatives } from "@/lib/listings";
 import {
+  cardPriceLabel,
   formatPlace,
   orderedAudience,
   primaryCategoryName,
   publicOverview,
-  startingPriceLabel,
   telHref,
   VERIFIED_LISTING_HELP,
   verificationNote,
@@ -32,6 +33,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   const checked = formatVerifiedDate(listing.last_verified);
   const business = localBusinessJsonLd(listing);
   const overview = publicOverview(listing);
+  const bookingQuestion = listingEditorial[listing.slug]?.bookingQuestion;
   const audience = orderedAudience(listing.audience);
   const address = publicAddress(listing);
   const categoryLabel = primaryCategoryName(listing);
@@ -62,7 +64,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
       <section className="mt-6 overflow-hidden rounded-2xl bg-ink text-white shadow-xl">
         <div className="grid lg:grid-cols-[1.1fr_1fr]">
           <div className="relative min-h-64 overflow-hidden lg:min-h-80">
-            <div className="absolute inset-0 bg-cover bg-center" role="img" aria-label={`Workspace image for ${listing.name}`} style={{ backgroundImage: `url(${imageUrl})` }} />
+            <div className="absolute inset-0 bg-cover bg-center" aria-hidden="true" style={{ backgroundImage: `url(${imageUrl})` }} />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
             <span className="absolute bottom-4 left-5 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-white/80 backdrop-blur">{isIllustrativeImage ? "Illustrative workspace image" : "Image from facility website"}</span>
           </div>
@@ -79,8 +81,14 @@ export function ListingDetail({ listing }: { listing: Listing }) {
         <div className="min-w-0">
           <div className="mt-10 space-y-10">
             <section>
-              <h2 className="text-xl font-semibold text-navy">Overview</h2>
+              <h2 className="text-xl font-semibold text-navy">What you can hire</h2>
               <p className="mt-3 leading-7 break-words text-slate-700">{overview}</p>
+              {bookingQuestion ? (
+                <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <h3 className="font-semibold text-navy">Ask before booking</h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-700">{bookingQuestion}</p>
+                </div>
+              ) : null}
             </section>
 
             <section>
@@ -185,7 +193,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
 
 function ListingContactPanel({ listing, checked }: { listing: Listing; checked: string }) {
   const rows = priceRows(listing.pricing);
-  const price = startingPriceLabel(listing.pricing);
+  const price = cardPriceLabel(listing.pricing);
   const place = publicAddress(listing).compact;
 
   return (
@@ -211,7 +219,7 @@ function ListingContactPanel({ listing, checked }: { listing: Listing; checked: 
             rel="noopener noreferrer"
             className="btn-primary w-full min-h-12"
           >
-            Visit website
+            Visit operator website
           </a>
         ) : null}
         {listing.phone ? (

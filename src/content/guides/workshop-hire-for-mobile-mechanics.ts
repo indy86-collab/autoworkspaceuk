@@ -138,7 +138,7 @@ const guide: GuideDocument = {
     p(
       "Write the answers against the listing. If the published price or the equipment is wrong, use ",
       link("report incorrect information", "/report"),
-      " from that listing. The form is the correction route. It does not currently send or store the report.",
+      " from that listing. Include the detail that changed and any source that supports the correction.",
     ),
 
     h2("where-to-look", "Where to look in the directory"),

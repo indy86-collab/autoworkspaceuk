@@ -143,8 +143,8 @@ export function WorkspaceReport() {
             closed, or that no longer hires space out, is not left up as a live listing.
           </p>
           <p>
-            {checked} Prices and equipment can change after that date. Corrections can be flagged from a listing. The
-            report form does not currently send or store a message.
+            {checked} Prices and equipment can change after that date. Use the correction link on a listing to tell us
+            what has changed.
           </p>
         </div>
       </section>

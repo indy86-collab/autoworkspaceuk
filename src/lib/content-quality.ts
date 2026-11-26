@@ -5,6 +5,7 @@
 
 import { getCategoryEditorial } from "@/content/category-editorial";
 import { guidePlainText } from "@/content/guides/blocks";
+import { listingEditorial } from "@/content/listing-editorial";
 import { getPublishedGuides } from "@/lib/guides";
 import { getPopulatedCategories } from "@/lib/listings";
 import { publicOverview, visiblePriceSummary } from "@/lib/public-listing";
@@ -16,9 +17,11 @@ const PUBLIC_PLACEHOLDERS =
 export function publicContentIssues(listings: readonly Listing[]): string[] {
   const issues: string[] = [];
   const live = listings.filter((listing) => listing.publish_status === "live");
+  const editorialText = new Map<string, string>();
 
   for (const listing of live) {
-    const publicText = [publicOverview(listing), visiblePriceSummary(listing.pricing) ?? ""].join("\n");
+    const editorial = listingEditorial[listing.slug];
+    const publicText = [publicOverview(listing), editorial?.bookingQuestion, visiblePriceSummary(listing.pricing)].join("\n");
     if (PUBLIC_PLACEHOLDERS.test(publicText)) {
       issues.push(`${listing.slug}: public listing copy still looks like placeholder or development text`);
     }
@@ -27,6 +30,15 @@ export function publicContentIssues(listings: readonly Listing[]): string[] {
     }
     if (/https?:\/\/localhost\b/i.test(publicText)) {
       issues.push(`${listing.slug}: live listing public copy contains a localhost URL`);
+    }
+    for (const text of [editorial?.overview, editorial?.bookingQuestion]) {
+      if (!text) continue;
+      const key = text.trim().replace(/\s+/g, " ").toLowerCase();
+      const other = editorialText.get(key);
+      if (other) {
+        issues.push(`${listing.slug}: listing editorial duplicates copy on ${other}`);
+      }
+      editorialText.set(key, listing.slug);
     }
   }
 

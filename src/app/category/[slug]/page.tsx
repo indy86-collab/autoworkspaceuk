@@ -7,6 +7,7 @@ import { getCategory } from "@/lib/categories";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/json-ld";
 import { getGuide } from "@/lib/guides";
 import { getListingsByCategory, populatedCategoryParams, publishedCountLabel } from "@/lib/listings";
+import { hasPublishedPrice } from "@/lib/ranking";
 import { buildMetadata, isIndexableCategory } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -53,6 +54,9 @@ export default async function CategoryPage(props: PageProps<"/category/[slug]">)
     return guide ? [guide] : [];
   });
   const faqs = [...category.faqs, ...(editorial?.extraFaqs ?? [])];
+  const browsePath = `/browse?category=${category.slug}`;
+  const pricedCount = listings.filter((listing) => hasPublishedPrice(listing.pricing)).length;
+  const consumerCount = listings.filter((listing) => listing.audience.includes("consumer")).length;
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
@@ -88,11 +92,21 @@ export default async function CategoryPage(props: PageProps<"/category/[slug]">)
           ))}
         </div>
       </section>
-      <p className="mt-4">
-        <Link href={`/browse?category=${category.slug}`} className="text-sm font-semibold text-blue-700 hover:text-blue-800">
-          Open these listings in browse
+      <nav aria-label="Filter these listings" className="mt-4 flex flex-wrap gap-2">
+        <Link href={browsePath} className="btn-secondary">
+          Filter by location or equipment
         </Link>
-      </p>
+        {pricedCount > 0 && pricedCount < listings.length ? (
+          <Link href={`${browsePath}&price=listed`} className="btn-secondary">
+            With published prices ({pricedCount})
+          </Link>
+        ) : null}
+        {consumerCount > 0 && consumerCount < listings.length ? (
+          <Link href={`${browsePath}&audience=consumer`} className="btn-secondary">
+            Open to private customers ({consumerCount})
+          </Link>
+        ) : null}
+      </nav>
       <div className="mt-8">
         <ListingGrid listings={listings} />
       </div>

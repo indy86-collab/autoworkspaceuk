@@ -139,9 +139,7 @@ const guide: GuideDocument = {
       link("spray booth", "/category/spray-booth-hire"),
       " if you need extraction. Washing and paint correction belong in a ",
       link("detailing bay", "/category/detailing-bay-hire"),
-      " when that is the facility on offer. A motorcycle needs a ",
-      link("motorcycle workspace", "/category/motorcycle-workspace"),
-      " rather than a guess that the bike will balance on a car ramp.",
+      " when that is the facility on offer. For a motorcycle, ask the operator whether the workspace has a suitable bike lift or stand.",
     ),
     p(
       "None of those categories means every UK business of that type is listed. ",

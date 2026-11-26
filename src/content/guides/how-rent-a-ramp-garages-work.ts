@@ -96,9 +96,7 @@ const guide: GuideDocument = {
       "Every lift has a rated capacity and a set of vehicles it can physically take. The directory records a capacity only when one was stated. A category called rent-a-ramp is not a weight limit. A kilogram figure on one listing describes that equipment, not every ramp in the country.",
     ),
     p(
-      "Height, length, and ground clearance matter as much as weight. A long van can be within the kilogram rating and still not fit the roof. A very low car can still be difficult to position. Take the make, model, and any modifications to the operator, and book only after they confirm that vehicle. A car ramp is not a ",
-      link("motorcycle workspace", "/category/motorcycle-workspace"),
-      " unless the equipment list names a bike lift or stand, or the facility accepts bikes.",
+      "Height, length, and ground clearance matter as much as weight. A long van can be within the kilogram rating and still not fit the roof. A very low car can still be difficult to position. Take the make, model, and any modifications to the operator, and book only after they confirm that vehicle. For motorcycle work, look for a bike lift or stand in the equipment list and confirm with the operator that the facility accepts bikes.",
     ),
 
     h2("which-jobs", "Jobs that suit a rented ramp"),

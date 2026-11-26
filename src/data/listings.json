@@ -42,7 +42,7 @@
     ],
     "notes": "Former MOT station now focused on rent-a-ramp. First-party site explicitly advertises three indoor bays at 21 Charnock Road, Liverpool L9 7ET.",
     "source_url": "https://www.atcautocare.com/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "rent-a-ramp-cardiff",
@@ -76,7 +76,7 @@
     ],
     "notes": "Current first-party site explicitly rents car garage ramps to individuals and businesses at 16 Ipswich Road, Cardiff.",
     "source_url": "https://www.rentarampcardiff.com/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "gtg-edinburgh-workshop-hire",
@@ -118,7 +118,7 @@
     ],
     "notes": "Current first-party page offers one-day through long-term workshop/ramp hire for dealers, trainers and automotive businesses.",
     "source_url": "https://gtg.co.uk/venue-hire/workshop-hire-in-edinburgh/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "gtg-wolverhampton-workshop-hire",
@@ -158,7 +158,7 @@
     ],
     "notes": "Professional workshop and ramp hire for manufacturers, fleet partners and automotive organisations. Single-day, multi-day and long-term hire is available.",
     "source_url": "https://gtg.co.uk/venue-hire/workshop-hire-in-wolverhampton/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "anyday-rentals-heanor",
@@ -192,9 +192,9 @@
       "two-post vehicle lift",
       "air supply"
     ],
-    "notes": "Ramp hire is offered at Agate House, Heanor Gate Road. Confirm the available days, lift capacity, supplied tools and current rate before booking. Manual re-check 2026-10-26: /rent-a-ramp/ and /ramp-hire/ publish conflicting prices and equipment details.",
+    "notes": "Ramp hire is offered at Agate House, Heanor Gate Road. The operator publishes different rates and equipment on its two hire pages. Confirm the available days, lift capacity, supplied tools and current rate before booking.",
     "source_url": "https://anydayrentals.co.uk/rent-a-ramp/",
-    "last_verified": "2026-10-26",
+    "last_verified": "2026-11-25",
     "restrictions": [
       "Confirm hire price, lift capacity and included tools before booking"
     ]
@@ -239,7 +239,7 @@
     "vehicle_capacity": "up to 4 tonnes",
     "notes": "First-party homepage now states SCA Rent-A-Ramp is CLOSED. Contact page still lists Unit 4D, Bramery Business Park, Alstone Lane, Cheltenham GL51 8HE. Keep off live until reopening is confirmed.",
     "source_url": "https://www.rent-a-ramp-cheltenham.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "the-car-bunker-newport",
@@ -284,7 +284,7 @@
     ],
     "notes": "Current first-party site explicitly operates Newport's dedicated self-service garage with 3 x 3,500kg two-post lifts and workshop equipment.",
     "source_url": "https://www.thecarbunker.co.uk/book-online",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "east-coast-cars-hoveton",
@@ -326,7 +326,7 @@
     ],
     "notes": "Staff assist with vehicle positioning; user remains responsible for work carried out.",
     "source_url": "https://eastcoastcars.co.uk/lift-ramp-hire-service/",
-    "last_verified": "2026-10-26",
+    "last_verified": "2026-11-25",
     "vehicle_capacity": "Maximum lift load 3,000kg",
     "restrictions": [
       "Bring your own power tools and specialist equipment",
@@ -360,7 +360,10 @@
     "email": "d.b.a.garage@gmail.com",
     "website": "https://bognorselfservicegarage.co.uk/",
     "pricing": {
-      "summary": "Book a bay by the hour, day or week; verify current price before display."
+      "hourly_from_gbp": 40,
+      "half_day_from_gbp": 130,
+      "day_from_gbp": 220,
+      "summary": "Self-service bay with standard tools: £40/hour, £130/half day or £220/full day."
     },
     "equipment": [
       "service bays",
@@ -368,8 +371,8 @@
       "tools available"
     ],
     "notes": "First-party site explicitly supports competent customers working on their own cars.",
-    "source_url": "https://bognorselfservicegarage.co.uk/",
-    "last_verified": "2026-10-26"
+    "source_url": "https://bognorselfservicegarage.co.uk/prices/",
+    "last_verified": "2026-11-25"
   },
   {
     "id": "rent-a-ramp-northeast-stanley",
@@ -409,7 +412,11 @@
     ],
     "notes": "DIY mechanics explicitly welcomed.",
     "source_url": "https://rentarampnortheast.com/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25",
+    "restrictions": [
+      "By appointment only",
+      "Late return fee of £10 per hour"
+    ]
   },
   {
     "id": "auto-barn-lovedean",
@@ -452,7 +459,7 @@
     ],
     "notes": "Saturday ramp hire, subject to availability.",
     "source_url": "https://autobarnmotorservices.co.uk/rent-a-ramp/",
-    "last_verified": "2026-10-26",
+    "last_verified": "2026-11-25",
     "restrictions": [
       "Ramp hire on Saturdays, subject to availability"
     ]
@@ -484,7 +491,8 @@
     "pricing": {
       "half_day_from_gbp": 70,
       "day_from_gbp": 120,
-      "summary": "£70 half day; £120 full day (Jan 2026 pricing)."
+      "vat_excluded": false,
+      "summary": "£70 half day or £120 full day, including VAT."
     },
     "equipment": [
       "3-ton ramp",
@@ -500,13 +508,13 @@
     ],
     "notes": "Bookings available weekdays; Saturday by arrangement.",
     "source_url": "https://romanmotors.co.uk/prices/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "2pro-wells",
     "slug": "2pro-wells",
     "name": "2PRO Professional Ramp Hire",
-    "publish_status": "coming_soon",
+    "publish_status": "review",
     "verification_level": "first_party",
     "primary_category": "rent-a-ramp",
     "categories": [
@@ -527,15 +535,15 @@
     "email": "sales@2pro.co.uk",
     "website": "https://www.2pro.co.uk/",
     "pricing": {
-      "summary": "Ramp hire is coming soon; bookings are not yet open."
+      "summary": "Current ramp-hire pricing is unconfirmed."
     },
     "equipment": [
       "4-ton 2-post lifts",
       "premium toolkit"
     ],
-    "notes": "Supervised DIY ramp hire is advertised as coming soon. Keep off public listings until bookings open.",
+    "notes": "The public ramp-hire route redirects to the operator homepage, which currently advertises refurbishment and mechanical services. Current ramp hire and launch timing are unconfirmed.",
     "source_url": "https://www.2pro.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "rent-a-ramp-cumbria",
@@ -575,7 +583,11 @@
     ],
     "notes": "Dedicated DIY workshop near Carlisle.",
     "source_url": "https://www.rentarampcumbrialtd.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25",
+    "restrictions": [
+      "£50 deposit required before each session",
+      "£60 charge if the vehicle cannot leave the premises"
+    ]
   },
   {
     "id": "borders-ramp-hire",
@@ -607,7 +619,9 @@
       "hourly_from_gbp": 12.5,
       "half_day_from_gbp": 40,
       "day_from_gbp": 80,
-      "summary": "£12.50/hour (2-hour minimum), £40/4 hours, £80/full day; weekly/monthly and flexi packages available."
+      "week_from_gbp": 350,
+      "monthly_from_gbp": 750,
+      "summary": "£12.50/hour (2-hour minimum), £40/4 hours, £80/full day, £350/week or £750/30 days. Flexi hire is £100 for 10 hours."
     },
     "equipment": [
       "2-post lift",
@@ -619,7 +633,11 @@
     ],
     "notes": "Open to DIY mechanics, painters, valeters, hobbyists and enthusiasts.",
     "source_url": "https://www.clubjapanimports.com/store/Workshop-Hire-c143921530",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25",
+    "restrictions": [
+      "Advance booking required",
+      "Height limits apply; discuss your vehicle before booking"
+    ]
   },
   {
     "id": "ramp-hire-services-louth",
@@ -659,14 +677,15 @@
     ],
     "notes": "DIY-only service; open 7 days by enquiry/booking.",
     "source_url": "https://ramphireservices.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25",
+    "vehicle_capacity": "4.2-tonne safe working load"
   },
   {
     "id": "tesla21-weymouth",
     "slug": "tesla21-weymouth",
     "name": "Tesla21 Rent-a-Ramp",
-    "publish_status": "live",
-    "verification_level": "first_party",
+    "publish_status": "hold",
+    "verification_level": "conflicting",
     "primary_category": "rent-a-ramp",
     "categories": [
       "rent-a-ramp",
@@ -685,16 +704,15 @@
     },
     "phone": "07706 986932",
     "email": null,
-    "website": "https://tesla21.uk/rent-a-ramp/",
+    "website": null,
     "pricing": {
-      "day_from_gbp": 60,
-      "summary": "£60 minimum 8-hour rental for car space or 4-tonne two-post ramp."
+      "summary": "Current hire pricing is unconfirmed."
     },
     "equipment": [
       "4-ton two-post ramp",
       "garage workspace"
     ],
-    "notes": "Current first-party site explicitly offers garage workspace and 4-tonne two-post ramp hire in Weymouth. Premises confirmed as Unit E, 42 Lynch Lane, Weymouth DT4 9DN via matching Tesla21 Motors directory listing.",
+    "notes": "The former hire page and homepage both return HTTP 410 and say the domain is no longer in use. Current hire availability is unconfirmed.",
     "source_url": "https://tesla21.uk/rent-a-ramp/",
     "last_verified": "2026-10-26"
   },
@@ -723,16 +741,14 @@
     "email": "weildingandking@gmail.com",
     "website": "https://www.weil-king.co.uk/ramp-rental",
     "pricing": {
-      "hourly_from_gbp": 19,
-      "summary": "From £19/hour; half-day/full-day discounts available by enquiry."
+      "summary": "Contact the operator for current hourly and longer-session rates."
     },
     "equipment": [
       "two-post lifts"
     ],
-    "vehicle_capacity": "cars, vans and motorcycles",
-    "notes": "Flexible hourly, half-day and full-day rental.",
+    "notes": "The operator advertises a two-post ramp for servicing, repairs and project work. Confirm the rate and vehicle suitability before booking.",
     "source_url": "https://www.weil-king.co.uk/ramp-rental",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "ufixit-worcester",
@@ -771,7 +787,7 @@
     ],
     "notes": "DIY paint spraying with supervised and unsupervised options.",
     "source_url": "https://www.ufixit.uk/book-online",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "dream-machine-workshop-bidford",
@@ -811,7 +827,7 @@
     ],
     "notes": "Full-size booth suitable for vehicles including high-top campers; broader workshop/equipment hire also offered.",
     "source_url": "https://www.the-dream-machine-workshop.com/book-here",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "sr-nicholls-swinton",
@@ -846,7 +862,7 @@
     ],
     "notes": "First-party site explicitly offers booth hire for customers carrying out their own repairs.",
     "source_url": "https://nichollsmotorservices.co.uk/services/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "a-team-automotive-chessington",
@@ -884,9 +900,9 @@
       "prep space",
       "basic tools"
     ],
-    "notes": "Offers both professional paint-booth hire and private garage-space rental.",
+    "notes": "Offers professional paint-booth hire and private garage bay hire for enthusiasts and tradespeople. Contact the operator for the exact premises before travelling.",
     "source_url": "https://ateamautomotive.co.uk/services-vehicle-repairs",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "spray-masters-derby",
@@ -903,7 +919,7 @@
       "consumer"
     ],
     "address": {
-      "line1": "Unit 3, Perkins Yard, Mansfield Road",
+      "line1": "Unit 3, Perkins Way, Mansfield Road",
       "city": "Derby",
       "region": "Derbyshire",
       "postcode": "DE21 4AW",
@@ -926,13 +942,13 @@
     ],
     "notes": "Broader trade spray-booth rental; vehicle work is accepted only after suitability review.",
     "source_url": "https://www.spraymastersuk.co.uk/spray-painting-booth-hire-near-me/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "paint-shop-pros-buckinghamshire",
     "slug": "paint-shop-pros-buckinghamshire",
     "name": "The Paint Shop Pros",
-    "publish_status": "live",
+    "publish_status": "review",
     "verification_level": "first_party",
     "primary_category": "spray-booth-hire",
     "categories": [
@@ -964,7 +980,7 @@
     "restrictions": [
       "Not suitable for high-top vans"
     ],
-    "notes": "Exact workshop address is not prominently published; contact required before visit.",
+    "notes": "The operator domain could not be resolved in two reviews. An older indexed hire page survives. Current hire availability, pricing and the exact premises need confirmation.",
     "source_url": "https://www.thepaintshoppros.co.uk/static-spray-booth-hire/",
     "last_verified": "2026-09-24"
   },
@@ -1168,7 +1184,7 @@
       "oil disposal",
       "key-code access"
     ],
-    "notes": "Manual re-check 2026-10-26: recorded Gumtree advert returns HTTP 410 Gone. Keep withheld until a current operator advert, website and exact premises can be verified.",
+    "notes": "The recorded Gumtree advert still returns HTTP 410. A current operator advert and exact premises are needed before publication.",
     "source_url": "https://www.gumtree.com/p/commercial-property-to-rent/diy-vehicle-workshop-ramp-hire-in-bedminster-bristol.-evenings-weekends-and-holidays-available./1512159880",
     "last_verified": "2026-09-25"
   },
@@ -1209,7 +1225,7 @@
     ],
     "notes": "Current marketplace advert offers one car space or a 3.5-tonne two-post ramp in a working garage. Minimum daily booking is 8 hours. Long-term rates require a minimum 12-month contract. Operator identity and exact premises must be verified before publication.",
     "source_url": "https://www.gumtree.com/p/garage-parking-to-rent/garage-workshop-car-space-or-ramp-hire-halesowen-birmingham-/1457289400",
-    "last_verified": "2026-10-26",
+    "last_verified": "2026-11-25",
     "restrictions": [
       "Minimum daily booking: 8 hours",
       "Long-term weekly rates require a minimum 12-month contract"
@@ -1251,7 +1267,7 @@
     ],
     "notes": "Currently collecting waitlist sign-ups.",
     "source_url": "https://driversworkshop.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "rampready-doncaster",
@@ -1286,9 +1302,9 @@
       "advanced tool hire",
       "waste-fluid disposal"
     ],
-    "notes": "Manual re-check 2026-10-26: homepage still says Coming Soon and asks for prelaunch survey feedback. Example prices and BOOK buttons do not establish an open workshop. Exact operating premises remain unverified.",
+    "notes": "The site collects prelaunch feedback and labels hire coming soon. Operating premises and launch timing are unconfirmed.",
     "source_url": "https://rampready.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "elev8-newport",
@@ -1323,7 +1339,7 @@
     ],
     "notes": "Purpose-built self-service garage marked OPENING SOON.",
     "source_url": "https://www.elev8newport.co.uk/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "this-is-your-garage-culham",
@@ -1371,7 +1387,7 @@
     ],
     "notes": "First-party site explicitly states that customers rent fully equipped bays and work on their own vehicles.",
     "source_url": "https://thisisyourgarage.com/about/workshop/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "ramp2rent-chesham",
@@ -1399,7 +1415,9 @@
     "email": null,
     "website": "https://www.ramp2rent.com/",
     "pricing": {
-      "summary": "Online booking available; pricing varies by session."
+      "hourly_from_gbp": 20,
+      "day_from_gbp": 80,
+      "summary": "£20/hour for off-peak weekday hire by request. Full 11-hour sessions are £80 weekdays or £100 on weekends."
     },
     "equipment": [
       "3,000kg vehicle lift",
@@ -1417,8 +1435,9 @@
       "No gas storage/use"
     ],
     "notes": "Dedicated access-code workshop; first-time users receive lift safety briefing. Booking pages list Little Pressmore Farm, Vale Road, Chesham; site postcode HP5 3NS confirmed via other businesses at the same farm estate.",
-    "source_url": "https://www.ramp2rent.com/",
-    "last_verified": "2026-10-26"
+    "source_url": "https://www.ramp2rent.com/book-online",
+    "last_verified": "2026-11-25",
+    "vehicle_capacity": "Maximum lift load 3,000 kg"
   },
   {
     "id": "ramp-garage-iver",
@@ -1447,8 +1466,8 @@
     "email": "info@rampgarage.co.uk",
     "website": "http://www.rampgarage.co.uk",
     "pricing": {
-      "hourly_from_gbp": 15,
-      "summary": "£20 first hour, then £15/hour; longer rentals discounted."
+      "hourly_from_gbp": 20,
+      "summary": "£20 for the first hour, then £15/hour. Ask about longer bookings."
     },
     "equipment": [
       "2 vehicle ramps",
@@ -1456,9 +1475,9 @@
       "oil-disposal facility reported",
       "well-lit indoor workspace"
     ],
-    "notes": "Manual re-check 2026-09-28: LinkedIn company page and BizSeek/Wheree profiles still explicitly advertise two ramps for DIY/mobile mechanics on a BYOT basis at Unit S, 11–17 High Street, Iver SL0 9ND. First-party site remains unfetchable; keep secondary verification and display source/verification date.",
+    "notes": "The operator’s LinkedIn page advertises two ramps for DIY and mobile mechanics at Unit S, High Street. Bring your own tools. Confirm the workshop entrance before visiting.",
     "source_url": "https://www.linkedin.com/company/rampgarage",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "car-ramp-hire-gravesend",
@@ -1479,7 +1498,7 @@
       "line1": "Essex Road",
       "city": "Gravesend",
       "region": "Kent",
-      "postcode": "DA11 0RW",
+      "postcode": "DA11 0SL",
       "country": "GB"
     },
     "phone": "07790 901481",
@@ -1495,9 +1514,9 @@
       "general workshop tools",
       "bright secure workspace"
     ],
-    "notes": "Manual re-check 2026-10-26: Fixter still describes self-service ramp and tool access. The former website now serves unrelated casino content and has been removed. Keep secondary verification; contact the operator to confirm current terms.",
+    "notes": "The Fixter profile describes self-service ramp hire. Multiple current local directories put the Essex Road workshop at DA11 0SL. Call to confirm hire, price and directions before travelling.",
     "source_url": "https://www.fixter.co.uk/garage/car-ramp-hire",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "uk-auto-centre-high-wycombe",
@@ -1572,7 +1591,7 @@
     ],
     "notes": "First-party hire page now leads with 'SORRY THIS IS NO LONGER AVAILABLE'. Premises recorded as Unit 2a, Chestnut Farm, Ashby Road, Moira DE12 6DP from current directory listings. Keep off live until booth hire is reconfirmed.",
     "source_url": "https://www.chameleonclassiccars.co.uk/rent-our-paint-booth/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "fast-fix-autos-burton",
@@ -1681,7 +1700,7 @@
     ],
     "notes": "First-party page explicitly rents the automotive spray booth to experienced or inexperienced users; technician advice is available.",
     "source_url": "https://www.autopaint-supplies.co.uk/pages/spray-booth-hire",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "macs-auto-detailing-leigh",
@@ -1728,7 +1747,7 @@
     ],
     "notes": "First-party booking page explicitly offers the professional-grade bay to enthusiasts, detailers and other users.",
     "source_url": "https://macsautodetailing.co.uk/products/macs-detailing-bay-day-booking",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "autopia-service-centres-darwen",
@@ -1922,7 +1941,7 @@
     ],
     "notes": "Current first-party GTG pages explicitly state that automotive workshop hire is available at Glasgow for short and long periods. The facility is principally business/training oriented.",
     "source_url": "https://gtg.co.uk/venue-hire/meeting-room-hire-in-glasgow/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "auto-diy-glasgow",
@@ -1972,7 +1991,7 @@
     "id": "ubique-motor-diy-helston",
     "slug": "ubique-motor-diy-helston",
     "name": "Ubique Motor DIY",
-    "publish_status": "live",
+    "publish_status": "review",
     "verification_level": "secondary",
     "primary_category": "self-service-garage",
     "categories": [
@@ -2007,7 +2026,7 @@
       "tools",
       "Wi-Fi"
     ],
-    "notes": "Manual re-check 2026-09-28: TouchLocal still describes Ubique as a DIY garage where customers carry out their own servicing/MOT repairs with tools and optional mechanic help; Locaji shows 2023–2024 customer reviews; LinkedIn lists Mark Perrett as current owner. First-party site still not fetchable. Keep secondary with visible verification date.",
+    "notes": "The original operator website and TouchLocal listing are inaccessible. Yell shows a garage listing and includes historical DIY reviews. Current self-service hire needs confirmation.",
     "source_url": "https://www.touchlocal.com/business/ubique-motor-diy/14495912",
     "last_verified": "2026-09-28"
   },
@@ -2098,9 +2117,9 @@
       "tyre machine",
       "wheel balancer"
     ],
-    "notes": "Current Gumtree/Facebook/Instagram advert refreshed in September 2026. Strong service evidence, but operator identity and exact workshop address should be verified before normal live publication.",
+    "notes": "The active Gumtree advert offers ramp and bay hire to independent mechanics and garages. The operator and exact workshop address need confirmation.",
     "source_url": "https://www.gumtree.com/p/car-part-accessories/workshop-ramp-bay-hire/1803129198",
-    "last_verified": "2026-09-25"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "vdr-auto-dundee",
@@ -2114,7 +2133,8 @@
       "vehicle-lift-hire"
     ],
     "audience": [
-      "consumer"
+      "consumer",
+      "trade"
     ],
     "address": {
       "line1": "42 Frederick Street",
@@ -2127,21 +2147,26 @@
     "email": "info@vdrauto.co.uk",
     "website": "https://vdrauto.co.uk/",
     "pricing": {
-      "day_from_gbp": 180,
-      "summary": "£180/day for a car or van ramp. Tools are not included."
+      "hourly_from_gbp": 30,
+      "half_day_from_gbp": 90,
+      "day_from_gbp": 140,
+      "summary": "£30 for the first hour, then £25/hour. £90 for 4 hours or £140 for 8 hours, for eligible cars and vans."
     },
     "equipment": [
       "car ramp",
-      "van ramp"
+      "van ramp",
+      "indoor workshop bay",
+      "workshop lighting"
     ],
     "restrictions": [
-      "Bring your own tools",
-      "Booking is confirmed only after operator contact",
+      "Bring your own tools, parts and materials",
+      "Only garage staff operate the lift",
+      "Trade use requires garage approval",
       "Monday to Friday, 8am–4pm"
     ],
-    "notes": "Hire a ramp to work on your own car or van. Confirm the appropriate ramp for your vehicle when booking.",
+    "notes": "DIY car and van ramp hire with online booking. The garage confirms vehicle suitability and operates the lift. Waste disposal and storage can be arranged for an additional fee.",
     "source_url": "https://vdrauto.co.uk/ramp-rental-dundee/",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
   },
   {
     "id": "auto-opulence-norwich",
@@ -2164,11 +2189,11 @@
       "postcode": "NR6 7BW",
       "country": "GB"
     },
-    "phone": "0330 053 6925",
+    "phone": "01603 517142",
     "email": "valeting@autoopulence.co.uk",
     "website": "https://autoopulence.co.uk/",
     "pricing": {
-      "summary": "Public hire: from £80/2 hours or £200/full day. Trade hire: £50/3 hours, £140/full day or £170/day with overnight access. Confirm availability before arrival."
+      "summary": "Public hire: from £80/2 hours, £200/full day or £350/weekend. Trade hire: from £50/3 hours, £140/full day or £170/day with overnight access."
     },
     "equipment": [
       "indoor detailing bay",
@@ -2184,6 +2209,119 @@
     ],
     "notes": "Indoor valeting and detailing bay for public and trade customers. Bring your preferred products and agree specialist equipment requirements before booking.",
     "source_url": "https://autoopulence.co.uk/category/valet-bay-hire",
-    "last_verified": "2026-10-26"
+    "last_verified": "2026-11-25"
+  },
+  {
+    "id": "sm-auto-tech-truro",
+    "slug": "sm-auto-tech-truro",
+    "name": "SM Auto Tech Ramp and Bay Hire",
+    "publish_status": "live",
+    "verification_level": "first_party",
+    "primary_category": "rent-a-ramp",
+    "categories": [
+      "rent-a-ramp",
+      "self-service-garage",
+      "garage-bay-hire",
+      "vehicle-lift-hire"
+    ],
+    "audience": [
+      "consumer"
+    ],
+    "address": {
+      "line1": "Unit A, Cedar Units, Threemilestone Industrial Estate",
+      "city": "Truro",
+      "region": "Cornwall",
+      "postcode": "TR4 9LD",
+      "country": "GB"
+    },
+    "phone": "01872 438781",
+    "email": "info@smautotech.co.uk",
+    "website": "https://www.smautotech.co.uk/diy-car-repairs-and-vehicle-ramp-hire",
+    "pricing": {
+      "summary": "Call for bay availability, hire rates and any tool-hire charges."
+    },
+    "equipment": [
+      "vehicle ramp",
+      "covered workshop bay",
+      "specialist tools and diagnostics available"
+    ],
+    "notes": "DIY ramp and workshop bay hire in Threemilestone. Contact the garage to agree the job, equipment and booking.",
+    "source_url": "https://www.smautotech.co.uk/diy-car-repairs-and-vehicle-ramp-hire",
+    "last_verified": "2026-11-25"
+  },
+  {
+    "id": "pit-start-garage-park-royal",
+    "slug": "pit-start-garage-park-royal",
+    "name": "Pit Start Garage",
+    "publish_status": "live",
+    "verification_level": "first_party",
+    "primary_category": "self-service-garage",
+    "categories": [
+      "self-service-garage",
+      "rent-a-ramp",
+      "garage-bay-hire",
+      "vehicle-lift-hire"
+    ],
+    "audience": [
+      "consumer"
+    ],
+    "address": {
+      "line1": "38 Standard Road",
+      "city": "London",
+      "region": "Greater London",
+      "postcode": "NW10 6EU",
+      "country": "GB"
+    },
+    "phone": "020 8827 1919",
+    "email": "info@pitstartgarage.com",
+    "website": "https://www.pit-start-garage.co.uk/",
+    "pricing": {
+      "summary": "Hourly hire. Call for rates and availability."
+    },
+    "equipment": [
+      "workshop bays",
+      "four-post lifts",
+      "workshop tools"
+    ],
+    "notes": "Park Royal garage offering hourly bay and lift hire. Staff allocate the bay for your job and explain the available equipment.",
+    "source_url": "https://www.pit-start-garage.co.uk/",
+    "last_verified": "2026-11-25"
+  },
+  {
+    "id": "ea-ramp-hire-bradwell",
+    "slug": "ea-ramp-hire-bradwell",
+    "name": "EA Ramp Hire",
+    "publish_status": "review",
+    "verification_level": "marketplace_current",
+    "primary_category": "rent-a-ramp",
+    "categories": [
+      "rent-a-ramp",
+      "garage-bay-hire",
+      "self-service-garage"
+    ],
+    "audience": [
+      "consumer"
+    ],
+    "address": {
+      "line1": null,
+      "city": "Bradwell",
+      "region": "Norfolk",
+      "postcode": null,
+      "country": "GB"
+    },
+    "phone": null,
+    "email": null,
+    "website": null,
+    "pricing": {
+      "hourly_from_gbp": 25,
+      "summary": "Advertised at £25/hour, with a £20/hour November promotion. Day hire available by enquiry."
+    },
+    "equipment": [
+      "vehicle ramp",
+      "workshop bay"
+    ],
+    "notes": "A current advertiser offers DIY hire in the Great Yarmouth area. The exact premises and a direct operator contact need confirmation.",
+    "source_url": "https://www.gumtree.com/p/car-replacement-parts/ramp-for-hire/1804604626",
+    "last_verified": "2026-11-25"
   }
 ]
