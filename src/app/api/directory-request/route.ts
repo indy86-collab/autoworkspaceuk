@@ -6,6 +6,7 @@ import {
   MAX_DIRECTORY_REQUEST_BYTES,
   MAX_JSON_KEYS,
 } from "@/lib/request-guard";
+import { absoluteUrl } from "@/lib/site";
 import { HONEYPOT_FIELD, STARTED_AT_FIELD, TURNSTILE_TOKEN_FIELD } from "@/lib/spam-protection";
 import { submitDirectoryRequest } from "@/lib/submit-directory-request";
 import { NextResponse } from "next/server";
@@ -35,6 +36,49 @@ function redirectTo(request: Request, path: string, params: Record<string, strin
     url.searchParams.set(key, value);
   }
   return NextResponse.redirect(url, 303);
+}
+
+function escapeHtml(value: string): string {
+  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+}
+
+function forwardInBrowser(delivery: { id: string; subject: string; message: string }, returnTo: string): Response {
+  const confirmation = new URL(absoluteUrl(returnTo));
+  confirmation.searchParams.set("received", "1");
+  const formUrl = new URL(absoluteUrl("/")).origin;
+  const fields = {
+    _url: formUrl,
+    _next: confirmation.href,
+    _subject: delivery.subject,
+    message: delivery.message,
+  };
+  const inputs = Object.entries(fields)
+    .map(([name, value]) => `<input type="hidden" name="${name}" value="${escapeHtml(value)}">`)
+    .join("");
+
+  return new Response(`<!doctype html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Send your AutoWorkspace UK submission</title>
+<main>
+  <h1>Send your submission</h1>
+  <p>Continue to FormSubmit to send your details to AutoWorkspace UK.</p>
+  <form id="delivery" method="post" action="https://formsubmit.co/${encodeURIComponent(delivery.id)}">
+    ${inputs}
+    <button type="submit">Continue to send</button>
+  </form>
+</main>
+<script>document.getElementById("delivery").requestSubmit();</script>
+</html>`, {
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      "Content-Security-Policy": "default-src 'none'; script-src 'unsafe-inline'; form-action 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'none'",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "X-Robots-Tag": "noindex",
+    },
+  });
 }
 
 async function readPayload(request: Request): Promise<{ kind: string; fields: Record<string, unknown>; returnTo: string }> {
@@ -108,7 +152,7 @@ export async function POST(request: Request) {
   const result = await submitDirectoryRequest({
     kind: payload.kind,
     fields: payload.fields,
-    browserDelivery: json && request.headers.get("x-directory-delivery") === "browser",
+    browserDelivery: !json || request.headers.get("x-directory-delivery") === "browser",
     spam: {
       honeypot,
       startedAt,
@@ -119,6 +163,10 @@ export async function POST(request: Request) {
   if (json) {
     const status = result.status === "invalid" ? 400 : result.status === "unavailable" ? 503 : 200;
     return NextResponse.json(result, { status, headers: { "Cache-Control": "no-store" } });
+  }
+
+  if (result.status === "forward" && result.delivery) {
+    return forwardInBrowser(result.delivery, payload.returnTo);
   }
 
   if (result.status === "received" || result.status === "spam") {
