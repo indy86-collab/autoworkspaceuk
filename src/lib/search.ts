@@ -92,18 +92,6 @@ export function hasActiveQuery(query: DirectoryQuery): boolean {
   );
 }
 
-export function activeFilterCount(query: DirectoryQuery): number {
-  return [
-    query.location,
-    query.category,
-    query.region,
-    query.area,
-    query.audience,
-    query.price,
-    ...query.equipment,
-  ].filter(Boolean).length;
-}
-
 export function directoryQueryToSearchParams(query: DirectoryQuery, sort?: SortId): URLSearchParams {
   const params = new URLSearchParams();
   if (query.location) {

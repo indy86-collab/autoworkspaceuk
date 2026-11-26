@@ -1,10 +1,8 @@
 import { CategoryIcon } from "@/components/CategoryIcon";
-import { DatasetStatList } from "@/components/content/DatasetStatList";
 import { GuideCardLink } from "@/components/content/GuideArticle";
-import { MethodologyNote } from "@/components/content/MethodologyNote";
 import { JsonLd } from "@/components/JsonLd";
 import { ListingGrid } from "@/components/ListingGrid";
-import { HomeJobFinder } from "@/components/HomeJobFinder";
+import { HeroSearch } from "@/components/HeroSearch";
 import { getWorkspaceReport } from "@/lib/dataset-insights";
 import { websiteJsonLd } from "@/lib/json-ld";
 import { getHomeGuides } from "@/lib/guides";
@@ -12,11 +10,12 @@ import {
   getFeaturedListings,
   getHomepageCategories,
   getListingsByCategory,
-  getPopulatedCategories,
+  getLiveListings,
+  getLocationSuggestionSources,
   getPopulatedDiscoveryAreas,
-  publishedCountLabel,
 } from "@/lib/listings";
 import { buildMetadata } from "@/lib/seo";
+import { ArrowRight, BadgeCheck, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -33,175 +32,122 @@ export const metadata: Metadata = {
   title: { absolute: homeTitle },
 };
 
-const whyPoints = [
-  {
-    title: "Listings are manually researched",
-    text: "Each published facility is checked against current evidence that someone outside the business can hire the space or the equipment.",
-  },
-  {
-    title: "Repair garages are not added automatically",
-    text: "A garage that only repairs customer cars is a different business. Owning a ramp is not enough to be listed.",
-  },
-  {
-    title: "Verification dates are shown",
-    text: "Every live listing shows when the evidence was last checked, so you can judge how fresh the record is.",
-  },
-  {
-    title: "Several kinds of workspace",
-    text: "Ramp hire, DIY bays, workshops, spray booths, detailing bays, and commercial vehicle space are filed separately.",
-  },
-];
-
 export default function HomePage() {
   const categories = getHomepageCategories();
+  const categoryCounts = categories.map((category) => ({ category, count: getListingsByCategory(category.slug).length }));
   const featured = getFeaturedListings(6);
   const guides = getHomeGuides();
   const report = getWorkspaceReport();
   const areas = getPopulatedDiscoveryAreas();
+  const locations = getLocationSuggestionSources();
+  const addresses = getLiveListings().map((listing) => listing.address);
 
   return (
     <>
       <JsonLd data={websiteJsonLd()} />
-      <section className="relative overflow-hidden bg-ink text-white">
-        <div className="absolute inset-0 opacity-65"><Image src="/images/home-workbench.png" alt="" fill priority sizes="100vw" className="object-cover" /></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/20" />
-        <div className="site-wrap relative flex min-h-[540px] items-end pb-24 pt-20 sm:min-h-[620px] sm:pb-28 lg:items-center">
-          <div className="max-w-2xl">
-            <h1 className="max-w-xl font-display text-5xl font-bold leading-[.98] tracking-[-.05em] sm:text-7xl">DIY garages and <span className="text-[#f7a46f]">ramp hire</span> across the UK</h1>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-white/85">Find somewhere to work on your vehicle. Compare published hire prices, lift and bay equipment, and who can book.</p>
-            <Link href="/browse" className="mt-7 inline-flex min-h-12 items-center rounded-lg bg-white px-5 py-3 font-semibold text-ink hover:bg-orange-50">
-              Browse workspaces
-            </Link>
+      <section className="border-b border-line bg-white">
+        <div className="site-wrap grid items-center gap-8 py-9 sm:py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-12 lg:py-14">
+          <div>
+            <h1 className="max-w-xl font-display text-[clamp(2.6rem,5vw,4.6rem)] font-bold leading-[1.02] tracking-[-.06em]">
+              DIY garages and <span className="text-accent">ramp hire</span> across the UK
+            </h1>
+            <p className="mt-4 max-w-md text-base leading-7 text-slate-600 sm:text-lg">
+              Find a place to work on your vehicle. Compare hire prices, equipment and who can book.
+            </p>
+            <HeroSearch categories={categories} sources={locations} listings={addresses} />
+            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-600">
+              <span className="inline-flex items-center gap-2">
+                <BadgeCheck aria-hidden="true" className="h-4 w-4 text-accent" />
+                {report.liveCount} checked workspaces across {report.regionCount} regions
+              </span>
+              <Link href="/methodology" className="font-semibold text-blue-700 hover:underline">How we check</Link>
+            </div>
           </div>
+          <figure className="relative aspect-[2/1] overflow-hidden rounded-2xl bg-slate-200 lg:aspect-[5/4]">
+            <Image
+              src="/images/workshop-hero-v2.webp"
+              alt=""
+              fill
+              preload
+              sizes="(min-width: 1280px) 600px, (min-width: 1024px) 48vw, calc(100vw - 2rem)"
+              className="object-cover object-center"
+            />
+            <figcaption className="absolute bottom-3 right-3 rounded-md bg-ink/85 px-2.5 py-1.5 text-xs text-white">
+              Illustrative workshop image
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <HomeJobFinder categories={getPopulatedCategories()} />
-
-      <section className="site-wrap -mt-2 pb-10">
-        <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#dedbd4] bg-white/50 px-5 py-4 text-sm text-ink/65">
-          <span><strong className="text-ink">{report.liveCount}</strong> workspaces across <strong className="text-ink">{report.regionCount}</strong> regions</span>
-          {report.latestVerified ? (
-            <span>Most recent listing check <time dateTime={report.latestVerified}>{report.latestVerifiedLabel}</time></span>
-          ) : null}
+      <section className="site-wrap page-section" aria-labelledby="workspace-types">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <h2 id="workspace-types" className="section-title">Browse by workspace type</h2>
+          <Link href="/categories" className="section-link">All categories <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
         </div>
-      </section>
-
-      <section className="site-wrap page-section">
-        <div className="flex items-end justify-between gap-4">
-          <div><p className="eyebrow text-accent">Start with the job</p><h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-ink">What are you looking for?</h2></div>
-          <Link href="/categories" className="shrink-0 text-sm font-semibold text-blue-700 hover:text-blue-800">
-            All categories
-          </Link>
-        </div>
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+        <ul className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {categoryCounts.map(({ category, count }) => (
             <li key={category.slug}>
-              <Link
-                href={`/category/${category.slug}`}
-                className="card flex h-full items-start gap-4 p-5 hover:border-accent"
-              >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f6dfd1] text-accent">
-                  <CategoryIcon name={category.icon} className="h-5 w-5" />
+              <Link href={`/category/${category.slug}`} className="card group flex h-full flex-col gap-3 p-3.5 sm:flex-row sm:items-center sm:p-4">
+                <span className="category-tile-icon"><CategoryIcon name={category.icon} className="h-5 w-5" /></span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-bold leading-snug text-ink group-hover:text-accent sm:text-base">{category.shortName}</span>
+                  <span className="mt-0.5 block text-sm text-slate-600">{count} {count === 1 ? "workspace" : "workspaces"}</span>
                 </span>
-                <span>
-                  <span className="block font-display font-bold text-ink">{category.name}</span>
-                  <span className="mt-1 block text-sm text-slate-600">
-                    {publishedCountLabel(getListingsByCategory(category.slug))}
-                  </span>
-                </span>
+                <ArrowRight aria-hidden="true" className="hidden h-4 w-4 shrink-0 text-slate-400 group-hover:text-accent sm:block" />
               </Link>
             </li>
           ))}
         </ul>
       </section>
 
-      {areas.length > 0 ? (
-        <section className="border-y border-slate-200 bg-slate-50">
-          <div className="site-wrap page-section">
-            <h2 className="font-display text-3xl font-bold text-ink">Find DIY garages and ramp hire around the UK</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-              Choose a region to see the workspaces you can compare there.
-            </p>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {areas.map(({ area, listings }) => (
-                <li key={area.id}>
-                  <Link
-                    href={`/browse?area=${area.id}`}
-                    className="card flex items-center justify-between gap-3 px-4 py-4 hover:border-blue-200"
-                  >
-                    <span className="font-semibold text-navy">{area.name}</span>
-                    <span className="text-sm text-slate-600">{publishedCountLabel(listings)}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      <section className="border-y border-line bg-white">
+        <div className="site-wrap page-section">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 className="section-title">Featured workspaces</h2>
+            <Link href="/browse" className="section-link">Browse all workspaces <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
           </div>
+          <div className="mt-5"><ListingGrid listings={featured} /></div>
+        </div>
+      </section>
+
+      {areas.length > 0 ? (
+        <section className="site-wrap page-section">
+          <h2 className="section-title">Browse by region</h2>
+          <ul className="mt-5 grid grid-cols-2 gap-2.5 lg:grid-cols-4">
+            {areas.map(({ area, listings }) => (
+              <li key={area.id}>
+                <Link href={`/browse?area=${area.id}`} className="card group flex h-full items-center gap-2.5 px-3 py-3.5 sm:px-4">
+                  <MapPin aria-hidden="true" className="h-4 w-4 shrink-0 text-accent" />
+                  <span className="flex-1 text-sm font-semibold group-hover:text-accent">{area.name}</span>
+                  <span className="text-xs text-slate-600" aria-label={`${listings.length} workspaces`}>{listings.length}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       ) : null}
 
-      <section className="site-wrap page-section">
-        <h2 className="text-2xl font-semibold text-navy">Featured listings</h2>
-        <p className="mt-2 max-w-2xl text-sm text-slate-600">
-          Verified locations chosen from different regions and workspace types.
-        </p>
-        <div className="mt-6">
-          <ListingGrid listings={featured} />
-        </div>
-      </section>
-
-      <section className="site-wrap pb-12">
-        <h2 className="text-2xl font-semibold text-navy">Why AutoWorkspace UK?</h2>
-        <ul className="mt-5 grid gap-4 sm:grid-cols-2">
-          {whyPoints.map((point) => (
-            <li key={point.title} className="card px-4 py-4">
-              <h3 className="font-semibold text-navy">{point.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">{point.text}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-4 text-sm">
-          <Link href="/methodology" className="font-semibold text-blue-700 hover:text-blue-800">
-            How listings are verified
-          </Link>
-        </p>
-      </section>
-
-      <section className="site-wrap pb-12">
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-semibold text-navy">Guides for working on your vehicle</h2>
-          <Link href="/guides" className="shrink-0 text-sm font-semibold text-blue-700 hover:text-blue-800">
-            All guides
-          </Link>
+      <section className="site-wrap pt-2 pb-12">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <h2 className="section-title">Before you book</h2>
+          <Link href="/guides" className="section-link">All guides <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
         </div>
         <ul className="mt-5 grid gap-4 lg:grid-cols-3">
           {guides.map((guide) => (
-            <li key={guide.slug}>
-              <GuideCardLink guide={guide} />
-            </li>
+            <li key={guide.slug}><GuideCardLink guide={guide} /></li>
           ))}
         </ul>
-      </section>
-
-      <section className="site-wrap pb-12">
-        <h2 className="text-2xl font-semibold text-navy">UK automotive workspace insights</h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-          Counts from the facilities currently published in the directory.
-        </p>
-        <div className="mt-5">
-          <DatasetStatList ids={["verifiedFacilities", "regions", "publishedPrices", "hourlyPrices"]} />
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-line bg-white px-5 py-4">
+          <div>
+            <h3 className="font-bold">UK automotive workspace report</h3>
+            {report.latestVerified ? (
+              <p className="mt-1 text-sm text-slate-600">
+                Most recent listing check <time dateTime={report.latestVerified}>{report.latestVerifiedLabel}</time>
+              </p>
+            ) : null}
+          </div>
+          <Link href="/insights/uk-automotive-workspace-report" className="section-link">Read the report <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
         </div>
-        <div className="mt-4 max-w-3xl">
-          <MethodologyNote />
-        </div>
-        <p className="mt-4">
-          <Link
-            href="/insights/uk-automotive-workspace-report"
-            className="font-semibold text-blue-700 hover:text-blue-800"
-          >
-            Read the UK workspace report
-          </Link>
-        </p>
       </section>
     </>
   );

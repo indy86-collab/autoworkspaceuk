@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #18211f;
-  --color-ink: #18211f;
-  --color-paper: #f5f3ef;
-  --color-accent: #d85f2b;
-  --color-primary: #d85f2b;
+  --color-navy: #131e32;
+  --color-ink: #131e32;
+  --color-paper: #f4f6f9;
+  --color-line: #dce3ed;
+  --color-accent: #254fc5;
+  --color-primary: #254fc5;
   --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05);
   --font-display: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
@@ -16,14 +17,14 @@
   }
 
   body {
-    background: #f5f3ef;
-    color: #18211f;
+    background: var(--color-paper);
+    color: var(--color-ink);
     overflow-x: hidden;
   }
 
   ::selection {
-    background: #f8c9a9;
-    color: #18211f;
+    background: #dce8ff;
+    color: var(--color-ink);
   }
 
   :focus-visible {
@@ -40,12 +41,46 @@
   .site-wrap {
     margin-inline: auto;
     width: 100%;
-    max-width: 86rem;
-    padding-inline: 1.5rem;
+    max-width: 82rem;
+    padding-inline: clamp(1rem, 3.5vw, 2rem);
   }
 
   .page-section {
-    padding-block: 3rem;
+    padding-block: clamp(2rem, 4.4vw, 3.75rem);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.15rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+  }
+
+  .section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.5rem;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .section-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .category-tile-icon {
+    display: grid;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border-radius: 0.7rem;
+    background: #edf2ff;
+    color: var(--color-accent);
   }
 
   .eyebrow {
@@ -77,18 +112,18 @@
 
   .btn-primary {
     border: 0;
-    background: #d85f2b;
+    background: var(--color-primary);
     color: #ffffff;
   }
 
   .btn-primary:hover {
-    background: #b7471d;
+    background: #173b9e;
   }
 
   .btn-secondary {
     border: 1px solid #cbd5e1;
     background: #ffffff;
-    color: #172554;
+    color: var(--color-ink);
   }
 
   .btn-secondary:hover {
@@ -99,7 +134,7 @@
   .btn-ghost {
     border: 0;
     background: transparent;
-    color: #172554;
+    color: var(--color-ink);
   }
 
   .btn-ghost:hover {
@@ -115,7 +150,7 @@
     background: #ffffff;
     padding: 0.65rem 0.8rem;
     font-size: 1rem;
-    color: #172554;
+    color: var(--color-ink);
     max-width: 100%;
   }
 
@@ -131,16 +166,16 @@
 
   .card {
     border-radius: 1rem;
-    border: 1px solid #dedbd4;
+    border: 1px solid var(--color-line);
     background: #ffffff;
-    box-shadow: 0 10px 30px rgb(24 33 31 / 0.04);
-    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 160ms ease, border-color 160ms ease;
   }
 
-  .card:hover {
-    transform: translateY(-2px);
-    border-color: #cfc8bc;
-    box-shadow: 0 16px 34px rgb(24 33 31 / 0.09);
+  a.card:hover,
+  .card:focus-within {
+    border-color: #a5b8ec;
+    box-shadow: 0 6px 22px rgb(23 44 82 / 0.075);
   }
 
   .chip {

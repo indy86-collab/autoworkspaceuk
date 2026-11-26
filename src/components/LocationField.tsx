@@ -14,22 +14,18 @@ export function LocationField({
   defaultValue = "",
   sources,
   listings = [],
-  examples,
-  onSelect,
 }: {
   id: string;
   name: string;
   defaultValue?: string;
   sources: readonly LocationSuggestion[];
   listings?: readonly SuggestionAddress[];
-  examples?: string;
-  onSelect?: (label: string) => void;
 }) {
   const listId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const [value, setValue] = useState(defaultValue);
   const [open, setOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const suggestions = useMemo(
     () => matchLocationSuggestions(sources, value, listings, 8),
@@ -49,13 +45,22 @@ export function LocationField({
   function choose(label: string) {
     setValue(label);
     setOpen(false);
-    onSelect?.(label);
+    setActiveIndex(-1);
   }
 
   const showList = open && suggestions.length > 0;
 
   return (
-    <div ref={rootRef} className="relative">
+    <div
+      ref={rootRef}
+      className="relative"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setOpen(false);
+          setActiveIndex(-1);
+        }
+      }}
+    >
       <label htmlFor={id} className="text-sm font-medium text-navy">
         Location
       </label>
@@ -71,13 +76,13 @@ export function LocationField({
         value={value}
         aria-autocomplete="list"
         aria-expanded={showList}
-        aria-controls={listId}
-        aria-activedescendant={showList ? `${listId}-${activeIndex}` : undefined}
+        aria-controls={showList ? listId : undefined}
+        aria-activedescendant={showList && activeIndex >= 0 ? `${listId}-${activeIndex}` : undefined}
         className="field"
         onChange={(event) => {
           setValue(event.target.value);
           setOpen(true);
-          setActiveIndex(0);
+          setActiveIndex(-1);
         }}
         onFocus={() => setOpen(true)}
         onKeyDown={(event) => {
@@ -88,16 +93,16 @@ export function LocationField({
           } else if (event.key === "ArrowUp" && suggestions.length > 0) {
             event.preventDefault();
             setOpen(true);
-            setActiveIndex((index) => (index - 1 + suggestions.length) % suggestions.length);
+            setActiveIndex((index) => index <= 0 ? suggestions.length - 1 : index - 1);
           } else if (event.key === "Enter" && showList && suggestions[activeIndex]) {
             event.preventDefault();
             choose(suggestions[activeIndex].label);
           } else if (event.key === "Escape") {
             setOpen(false);
+            setActiveIndex(-1);
           }
         }}
       />
-      {examples ? <p className="mt-1.5 text-xs text-slate-500">{examples}</p> : null}
       {showList ? (
         <ul
           id={listId}

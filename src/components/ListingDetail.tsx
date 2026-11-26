@@ -1,3 +1,4 @@
+import { CategoryIcon } from "@/components/CategoryIcon";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { EquipmentList } from "@/components/EquipmentList";
 import { JsonLd } from "@/components/JsonLd";
@@ -7,7 +8,7 @@ import { VerificationBadge } from "@/components/VerificationBadge";
 import { listingEditorial } from "@/content/listing-editorial";
 import { publicAddress } from "@/lib/address";
 import { publicCategoryOf } from "@/lib/categories";
-import { audienceLabel, formatVerifiedDate, priceRows } from "@/lib/format";
+import { audienceLabel, formatVerifiedDate } from "@/lib/format";
 import { breadcrumbJsonLd, localBusinessJsonLd } from "@/lib/json-ld";
 import { getGuideForListing } from "@/lib/guides";
 import { getNearbyAlternatives } from "@/lib/listings";
@@ -22,7 +23,8 @@ import {
   verificationNote,
 } from "@/lib/public-listing";
 import type { Listing } from "@/lib/types";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import listingImages from "@/data/listing-images.json";
 
@@ -37,9 +39,8 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   const audience = orderedAudience(listing.audience);
   const address = publicAddress(listing);
   const categoryLabel = primaryCategoryName(listing);
-  const mobileActions = listing.website || listing.phone;
-  const imageUrl = listingImages[listing.slug as keyof typeof listingImages] ?? "/images/ramp-bay.png";
-  const isIllustrativeImage = !listingImages[listing.slug as keyof typeof listingImages];
+  const mobileActions = listing.website || listing.phone || listing.email;
+  const imageUrl = listingImages[listing.slug as keyof typeof listingImages];
   const breadcrumbs = [
     { name: "Home", path: "/" },
     {
@@ -61,30 +62,41 @@ export function ListingDetail({ listing }: { listing: Listing }) {
         ]}
       />
 
-      <section className="mt-6 overflow-hidden rounded-2xl bg-ink text-white shadow-xl">
-        <div className="grid lg:grid-cols-[1.1fr_1fr]">
-          <div className="relative min-h-64 overflow-hidden lg:min-h-80">
-            <div className="absolute inset-0 bg-cover bg-center" aria-hidden="true" style={{ backgroundImage: `url(${imageUrl})` }} />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-5 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-white/80 backdrop-blur">{isIllustrativeImage ? "Illustrative workspace image" : "Image from facility website"}</span>
-          </div>
-          <div className="flex flex-col justify-center p-6 sm:p-9">
-            <div className="flex flex-wrap items-center gap-2"><VerificationBadge listing={listing} />{audience.map((item) => <span key={item} className="chip bg-white/10 text-white ring-1 ring-white/20">{audienceLabel(item)}</span>)}</div>
-            <h1 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">{listing.name}</h1>
-            <p className="mt-4 flex items-start gap-2 text-white/75"><MapPin aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-[#f7a46f]" /><span>{formatPlace(listing)}</span></p>
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[#f7a46f]">{categoryLabel}</p>
+      <header className={`mt-5 overflow-hidden rounded-2xl border border-line bg-white ${imageUrl ? "grid md:grid-cols-[minmax(0,1fr)_minmax(0,38%)]" : ""}`}>
+        <div className="p-5 sm:p-8">
+          <p className="inline-flex items-center gap-2 text-sm font-bold text-accent">
+            {category ? <CategoryIcon name={category.icon} className="h-5 w-5" /> : null}
+            {categoryLabel}
+          </p>
+          <h1 className="mt-3 font-display text-4xl font-bold leading-[1.08] tracking-[-.05em] sm:text-5xl">{listing.name}</h1>
+          <p className="mt-3 flex items-start gap-2 text-slate-600">
+            <MapPin aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+            {formatPlace(listing)}
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <VerificationBadge listing={listing} />
+            <span className="text-sm text-slate-600">Checked <time dateTime={listing.last_verified}>{checked}</time></span>
           </div>
         </div>
-      </section>
+        {imageUrl ? (
+          <figure className="relative min-h-40 border-t border-line bg-slate-100 md:min-h-52 md:border-t-0 md:border-l">
+            <Image src={imageUrl} alt="" fill unoptimized className="object-cover" />
+            <figcaption className="absolute right-3 bottom-3 rounded-md bg-ink/85 px-2.5 py-1.5 text-xs text-white">
+              Image from facility website
+            </figcaption>
+          </figure>
+        ) : null}
+      </header>
 
-      <div className="mt-8 grid items-start gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(18rem,1fr)]">
-        <div className="min-w-0">
-          <div className="mt-10 space-y-10">
+      <div className="mt-5 grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,22rem)] lg:gap-7">
+        <ListingContactPanel listing={listing} />
+        <div className="min-w-0 lg:col-start-1 lg:row-start-1">
+          <div className="space-y-7 rounded-2xl border border-line bg-white p-5 sm:p-8">
             <section>
               <h2 className="text-xl font-semibold text-navy">What you can hire</h2>
               <p className="mt-3 leading-7 break-words text-slate-700">{overview}</p>
               {bookingQuestion ? (
-                <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <div className="mt-4 rounded-xl border border-blue-100 bg-blue-50 p-4">
                   <h3 className="font-semibold text-navy">Ask before booking</h3>
                   <p className="mt-1 text-sm leading-6 text-slate-700">{bookingQuestion}</p>
                 </div>
@@ -149,7 +161,7 @@ export function ListingDetail({ listing }: { listing: Listing }) {
               </p>
             </section>
 
-            <section className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+            <section className="rounded-xl border border-line bg-paper p-5">
               <h2 className="text-xl font-semibold text-navy">Verified by AutoWorkspace UK</h2>
               <p className="mt-3 font-medium text-navy">Last checked {checked}</p>
               <p className="mt-3 leading-7 text-slate-700">{VERIFIED_LISTING_HELP}</p>
@@ -167,11 +179,15 @@ export function ListingDetail({ listing }: { listing: Listing }) {
                   How verification works
                 </Link>
               </p>
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-blue-700">
+                <Link href={`/report?listing=${listing.slug}`} className="hover:underline">Report incorrect information</Link>
+                <Link href={`/claim-listing?listing=${listing.slug}`} className="hover:underline">Claim or update this listing</Link>
+              </div>
             </section>
           </div>
 
           {guide ? (
-            <section className="mt-10 rounded-lg border border-slate-200 p-5">
+            <section className="mt-5 rounded-xl border border-line bg-white p-5">
               <h2 className="text-xl font-semibold text-navy">Related guide</h2>
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 <Link href={`/guides/${guide.slug}`} className="font-semibold text-blue-700 hover:text-blue-800">
@@ -182,7 +198,6 @@ export function ListingDetail({ listing }: { listing: Listing }) {
           ) : null}
         </div>
 
-        <ListingContactPanel listing={listing} checked={checked} />
       </div>
 
       <NearbyListings listings={nearby} />
@@ -191,67 +206,37 @@ export function ListingDetail({ listing }: { listing: Listing }) {
   );
 }
 
-function ListingContactPanel({ listing, checked }: { listing: Listing; checked: string }) {
-  const rows = priceRows(listing.pricing);
+function ListingContactPanel({ listing }: { listing: Listing }) {
   const price = cardPriceLabel(listing.pricing);
-  const place = publicAddress(listing).compact;
 
   return (
-    <aside className="card p-5 lg:sticky lg:top-20">
-      <h2 className="text-base font-semibold text-navy">Hire details</h2>
-      {rows.length > 1 ? (
-        <dl className="mt-4 space-y-3">
-          {rows.map((row) => (
-            <div key={row.label} className="flex items-baseline justify-between gap-3">
-              <dt className="text-sm text-slate-600">{row.label}</dt>
-              <dd className="text-sm font-semibold text-navy">{row.value}</dd>
-            </div>
-          ))}
-        </dl>
-      ) : (
-        <p className="mt-4 text-lg font-semibold text-navy">{price ?? "Contact for pricing"}</p>
-      )}
-      <div className="mt-5 space-y-3">
+    <aside className="rounded-2xl border border-line bg-white p-5 lg:sticky lg:top-20 lg:col-start-2 lg:row-start-1">
+      <h2 className="text-base font-bold">Contact the operator</h2>
+      <p className="mt-2 text-lg font-bold text-navy">{price ?? "Contact for pricing"}</p>
+      <p className="mt-1 text-sm leading-6 text-slate-600">Confirm availability and book directly with the facility.</p>
+      <div className="mt-4 space-y-2.5">
         {listing.website ? (
           <a
             href={listing.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary w-full min-h-12"
+            className="btn-primary w-full"
           >
-            Visit operator website
+            Visit operator website <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </a>
         ) : null}
         {listing.phone ? (
-          <a href={telHref(listing.phone)} className="btn-secondary w-full min-h-12">
+          <a href={telHref(listing.phone)} className={`${listing.website ? "btn-secondary" : "btn-primary"} w-full`}>
             <Phone aria-hidden="true" className="h-4 w-4" />
             {listing.phone}
           </a>
         ) : null}
         {listing.email ? (
-          <a href={`mailto:${listing.email}`} className="btn-secondary w-full min-h-12">
-            <Mail aria-hidden="true" className="h-4 w-4" />
+          <a href={`mailto:${listing.email}`} className={`${listing.website || listing.phone ? "btn-secondary" : "btn-primary"} w-full`}>
+            <Mail aria-hidden="true" className="h-4 w-4 shrink-0" />
             <span className="truncate">{listing.email}</span>
           </a>
         ) : null}
-      </div>
-      <p className="mt-4 text-sm text-slate-600">{place}</p>
-      <p className="mt-1 text-xs text-slate-500">Last verified {checked}</p>
-      <p className="mt-4">
-        <Link href={`/report?listing=${listing.slug}`} className="text-sm font-semibold text-blue-700 hover:text-blue-800">
-          Report incorrect information
-        </Link>
-      </p>
-      <div className="mt-5 border-t border-slate-200 pt-4">
-        <p className="text-sm font-semibold text-navy">Own this business?</p>
-        <p className="mt-1">
-          <Link
-            href={`/claim-listing?listing=${listing.slug}`}
-            className="text-sm font-semibold text-blue-700 hover:text-blue-800"
-          >
-            Claim or update this listing
-          </Link>
-        </p>
       </div>
     </aside>
   );
@@ -275,6 +260,9 @@ function ListingMobileActions({ listing }: { listing: Listing }) {
           primary: !listing.website,
         }
       : null,
+    listing.email && !listing.website && !listing.phone
+      ? { href: `mailto:${listing.email}`, label: "Email", external: false, primary: true }
+      : null,
   ].filter((item): item is { href: string; label: string; external: boolean; primary: boolean } => item !== null);
 
   if (actions.length === 0) {
@@ -282,8 +270,8 @@ function ListingMobileActions({ listing }: { listing: Listing }) {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 border-t border-slate-200 bg-white/95 p-3 backdrop-blur lg:hidden">
-      <div className={`site-wrap grid gap-2 ${actions.length > 1 ? "grid-cols-2" : "grid-cols-1"} px-0`}>
+    <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-white/95 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
+      <div className={`site-wrap grid gap-2 ${actions.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
         {actions.map((action) => (
           <a
             key={action.label}

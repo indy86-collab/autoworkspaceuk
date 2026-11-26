@@ -44,15 +44,16 @@ export function HeroSearch({
       method="get"
       role="search"
       onSubmit={onSubmit}
-      className="card mt-8 p-4 sm:p-5"
+      aria-label="Find a workspace"
+      className="mt-6 rounded-xl border border-line bg-paper p-3.5 sm:p-4"
     >
-      <div className="grid gap-3 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_auto] md:items-end">
-        <LocationField id="location" name="location" sources={sources} listings={listings} />
+      <div className="grid gap-3 min-[440px]:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] min-[440px]:items-end">
+        <LocationField id="home-location" name="location" sources={sources} listings={listings} />
         <div>
-          <label htmlFor="category" className="text-sm font-medium text-navy">
+          <label htmlFor="home-category" className="text-sm font-medium text-navy">
             Workspace type
           </label>
-          <select id="category" name="category" defaultValue="" className="field">
+          <select id="home-category" name="category" defaultValue="" className="field">
             <option value="">All types</option>
             {categories.map((category) => (
               <option key={category.slug} value={category.slug}>
@@ -61,12 +62,11 @@ export function HeroSearch({
             ))}
           </select>
         </div>
-        <button type="submit" className="btn-primary h-11 gap-2 md:mt-0">
+        <button type="submit" className="btn-primary h-11 min-[440px]:col-span-2">
           <Search aria-hidden="true" className="h-4 w-4" />
-          Find workspace
+          Search workspaces
         </button>
       </div>
-      <p className="mt-3 text-sm text-slate-600">Examples: Liverpool, Cardiff, L9, NP19</p>
     </form>
   );
 }

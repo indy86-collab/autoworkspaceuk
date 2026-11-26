@@ -75,23 +75,20 @@ export default async function CategoryPage(props: PageProps<"/category/[slug]">)
           { label: category.name },
         ]}
       />
-      <div className="mt-6 flex items-start gap-4">
-        <span className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-blue-700">
-          <CategoryIcon name={category.icon} />
-        </span>
-        <div>
-          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-navy sm:text-4xl">{category.name}</h1>
-          <p className="mt-3 text-sm font-semibold text-navy">{publishedCountLabel(listings)}</p>
+      <header className="mt-5 rounded-2xl border border-line bg-white p-5 sm:p-8">
+        <div className="flex items-start gap-3.5">
+          <span className="category-tile-icon mt-1"><CategoryIcon name={category.icon} /></span>
+          <div>
+            <h1 className="max-w-3xl font-display text-3xl font-bold tracking-tight text-navy sm:text-4xl">{category.name}</h1>
+            <p className="mt-2 text-sm font-semibold text-accent">{publishedCountLabel(listings)}</p>
+          </div>
         </div>
-      </div>
-      <section className="mt-4 max-w-3xl">
-        <h2 className="text-xl font-semibold text-navy">What this workspace type is</h2>
-        <div className="mt-3 space-y-4 leading-7 text-slate-700">
+        <div className="mt-4 max-w-3xl space-y-3 leading-7 text-slate-700">
           {category.introduction.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-      </section>
+      </header>
       <nav aria-label="Filter these listings" className="mt-4 flex flex-wrap gap-2">
         <Link href={browsePath} className="btn-secondary">
           Filter by location or equipment
