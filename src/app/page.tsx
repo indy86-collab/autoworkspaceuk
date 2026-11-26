@@ -3,6 +3,7 @@ import { GuideCardLink } from "@/components/content/GuideArticle";
 import { JsonLd } from "@/components/JsonLd";
 import { ListingGrid } from "@/components/ListingGrid";
 import { HeroSearch } from "@/components/HeroSearch";
+import listingImages from "@/data/listing-images.json";
 import { getWorkspaceReport } from "@/lib/dataset-insights";
 import { websiteJsonLd } from "@/lib/json-ld";
 import { getHomeGuides } from "@/lib/guides";
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const categories = getHomepageCategories();
   const categoryCounts = categories.map((category) => ({ category, count: getListingsByCategory(category.slug).length }));
-  const featured = getFeaturedListings(6);
+  const featured = getFeaturedListings(6, (listing) => Object.hasOwn(listingImages, listing.slug));
   const guides = getHomeGuides();
   const report = getWorkspaceReport();
   const areas = getPopulatedDiscoveryAreas();
@@ -100,7 +101,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="border-y border-line bg-white">
+      {featured.length > 0 ? <section className="border-y border-line bg-white">
         <div className="site-wrap page-section">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="section-title">Featured workspaces</h2>
@@ -108,7 +109,7 @@ export default function HomePage() {
           </div>
           <div className="mt-5"><ListingGrid listings={featured} /></div>
         </div>
-      </section>
+      </section> : null}
 
       {areas.length > 0 ? (
         <section className="site-wrap page-section">

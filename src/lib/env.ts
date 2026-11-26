@@ -9,9 +9,7 @@ export interface EnvVariableDefinition {
 
 export const PRODUCTION_REQUIRED_ENV = [
   "NEXT_PUBLIC_SITE_URL",
-  "RESEND_API_KEY",
   "DIRECTORY_INBOX_EMAIL",
-  "DIRECTORY_FROM_EMAIL",
 ] as const;
 
 export const OPTIONAL_ENV = ["TURNSTILE_SECRET_KEY", "NEXT_PUBLIC_TURNSTILE_SITE_KEY"] as const;
@@ -24,22 +22,10 @@ export const ENV_VARIABLES: readonly EnvVariableDefinition[] = [
     description: "Canonical public origin used for metadata, Open Graph, sitemap, and robots.",
   },
   {
-    name: "RESEND_API_KEY",
-    requiredInProduction: true,
-    requiredInDevelopment: false,
-    description: "Server-only Resend API key for directory submission email.",
-  },
-  {
     name: "DIRECTORY_INBOX_EMAIL",
     requiredInProduction: true,
     requiredInDevelopment: false,
-    description: "Server-only inbox that receives listing, report, and claim emails.",
-  },
-  {
-    name: "DIRECTORY_FROM_EMAIL",
-    requiredInProduction: true,
-    requiredInDevelopment: false,
-    description: "Server-only From address. Must be a verified Resend sender.",
+    description: "Server-only recipient for FormSubmit delivery of listing, report, and claim emails.",
   },
   {
     name: "TURNSTILE_SECRET_KEY",

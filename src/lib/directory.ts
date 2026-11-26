@@ -69,7 +69,7 @@ export interface ListingDirectory {
   getListingsByCity: (city: string) => Listing[];
   getListingsByRegion: (region: string) => Listing[];
   getNearbyAlternatives: (listing: Listing, limit?: number) => Listing[];
-  getFeaturedListings: (limit?: number) => Listing[];
+  getFeaturedListings: (limit?: number, eligible?: (listing: Listing) => boolean) => Listing[];
 }
 
 /**
@@ -128,8 +128,8 @@ export function createDirectory(listings: readonly Listing[]): ListingDirectory 
 
       return picked;
     },
-    getFeaturedListings(limit = 6) {
-      const remaining = [...live];
+    getFeaturedListings(limit = 6, eligible) {
+      const remaining = eligible ? live.filter(eligible) : [...live];
       const picked: Listing[] = [];
       const regions = new Set<string>();
       const categories = new Set<string>();

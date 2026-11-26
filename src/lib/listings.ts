@@ -40,8 +40,8 @@ export function getNearbyAlternatives(listing: Listing, limit = 3): Listing[] {
   return directory.getNearbyAlternatives(listing, limit);
 }
 
-export function getFeaturedListings(limit = 6): Listing[] {
-  return directory.getFeaturedListings(limit);
+export function getFeaturedListings(limit = 6, eligible?: (listing: Listing) => boolean): Listing[] {
+  return directory.getFeaturedListings(limit, eligible);
 }
 
 export function liveListingParams(): { slug: string }[] {

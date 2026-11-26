@@ -53,7 +53,11 @@ export default function PrivacyPage() {
 
           <h2 className="pt-4 text-xl font-semibold text-navy">Why we collect it</h2>
           <p>
-            We collect that information only so we can review a suggested listing, a correction, or a claim. There is no database of user accounts. Submissions are sent for manual review, typically by email.
+            We collect that information so we can review a suggested listing, a correction, or a claim. FormSubmit
+            processes the submission and forwards it to our review inbox.{" "}
+            <a className="font-semibold text-blue-700 hover:underline" href="https://formsubmit.co/privacy.pdf">
+              FormSubmit privacy policy
+            </a>
           </p>
           <p>
             Submissions are reviewed by a person before anything is published. Submitted contact information is not automatically added to a listing or shown on the public site. A listing is updated only if we can verify the change against published evidence.
@@ -61,7 +65,8 @@ export default function PrivacyPage() {
 
           <h2 className="pt-4 text-xl font-semibold text-navy">How long we keep submissions</h2>
           <p>
-            We keep a submission only for as long as it is needed to review it and, where relevant, to update or decline a listing. We do not claim a fixed retention period. After a review is finished, we aim to delete or archive the submission rather than keep personal contact details indefinitely.
+            FormSubmit says it retains submissions for 30 days. In our inbox, we keep submissions for as long as
+            needed to review them and, where relevant, to update or decline a listing.
           </p>
 
           <h2 className="pt-4 text-xl font-semibold text-navy">Published directory information</h2>

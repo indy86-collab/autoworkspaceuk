@@ -12,7 +12,7 @@ function pad(label: string): string {
 
 console.log("AutoWorkspace UK environment check");
 console.log("==================================");
-console.log(productionMode ? "Mode: production (required variables must be set)" : "Mode: local/development (Resend variables are optional)");
+console.log(productionMode ? "Mode: production (required variables must be set)" : "Mode: local/development (email inbox is optional)");
 console.log("");
 console.log("Required production config");
 for (const item of report.requiredProduction) {
@@ -42,7 +42,7 @@ if (!report.ok) {
 
 if (!productionMode && report.missingRequiredProduction.length > 0) {
   console.log("");
-  console.log("Local development may continue without Resend. Directory forms will not email until production config is set.");
+  console.log("Local development may continue without an email inbox. Set DIRECTORY_INBOX_EMAIL to enable delivery.");
 }
 
 console.log("");

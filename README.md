@@ -119,7 +119,9 @@ Not indexed:
 
 Set `NEXT_PUBLIC_SITE_URL` before production. See `.env.example`. The default canonical host is `https://www.autoworkspace.uk`.
 
-Form submissions use Resend from `POST /api/directory-request`. In production set `RESEND_API_KEY`, `DIRECTORY_INBOX_EMAIL`, and `DIRECTORY_FROM_EMAIL`. Local development validates the form, logs the payload, and returns a development-only success if those variables are unset. Production does not silently discard submissions.
+The Add Listing, Report Incorrect Information and Claim/Update Listing forms send validated submissions through FormSubmit from `POST /api/directory-request`. Set the server-only `DIRECTORY_INBOX_EMAIL` in production. Keep the recipient address out of public markup and source control. No API key or sender-domain setup is required.
+
+FormSubmit sends a one-time activation email when it first receives a submission for the inbox. Activate the form and verify receipt with a fresh test on the production domain. Until activation, the site shows a delivery error. In local development without an inbox, the route validates and logs a development-only submission.
 
 ## Development
 
@@ -143,7 +145,7 @@ npm run build
 npm start
 ```
 
-`npm run build` runs the publishing checks, then creates the production build. It does not require Resend secrets during local development. `npm start` serves that build. `npm run audit:data` reports missing optional fields and does not fail the build for them. Schema problems still fail. `npm run audit:links` checks internal static hrefs. `npm run check:env` reports required production config, optional config, and missing values without printing secrets. Use `npm run check:env -- --production` on a production host. `npm run report:maintenance` is an internal summary for local review and is not a public page. `npm run report:prelaunch` regenerates `reports/prelaunch-data-review.json` and `.md`.
+`npm run build` runs the publishing checks, then creates the production build. It does not require a delivery inbox to build. `npm start` serves that build. `npm run audit:data` reports missing optional fields and does not fail the build for them. Schema problems still fail. `npm run audit:links` checks internal static hrefs. `npm run check:env` reports required production config, optional config, and missing values without printing secrets. Use `npm run check:env -- --production` on a production host. `npm run report:maintenance` is an internal summary for local review and is not a public page. `npm run report:prelaunch` regenerates `reports/prelaunch-data-review.json` and `.md`.
 
 ## Routes
 

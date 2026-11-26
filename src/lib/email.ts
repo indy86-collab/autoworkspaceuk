@@ -1,49 +1,48 @@
 import { sanitizeEmailSubject, sanitizeEmailText } from "@/lib/email-sanitize";
+import { siteConfig } from "@/lib/site";
 
-const RESEND_ENDPOINT = "https://api.resend.com/emails";
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/";
 
 export function isEmailDeliveryConfigured(): boolean {
-  return Boolean(
-    process.env.RESEND_API_KEY?.trim() &&
-      process.env.DIRECTORY_INBOX_EMAIL?.trim() &&
-      process.env.DIRECTORY_FROM_EMAIL?.trim(),
-  );
+  return Boolean(process.env.DIRECTORY_INBOX_EMAIL?.trim());
 }
 
 export function allowDevelopmentSubmissionFallback(): boolean {
   return process.env.NODE_ENV !== "production";
 }
 
-/**
- * Send a plain-text directory email.
- * Recipient and From are always environment-controlled. User input cannot
- * set to/cc/bcc/from or arbitrary headers, and is never sent as HTML.
- */
+/** Forward a validated directory request to the server-configured inbox. */
 export async function sendDirectoryEmail(input: { subject: string; text: string }): Promise<void> {
-  const apiKey = process.env.RESEND_API_KEY?.trim();
-  const to = process.env.DIRECTORY_INBOX_EMAIL?.trim();
-  const from = process.env.DIRECTORY_FROM_EMAIL?.trim();
-
-  if (!apiKey || !to || !from) {
-    throw new Error("Email delivery is not configured.");
+  const inbox = process.env.DIRECTORY_INBOX_EMAIL?.trim();
+  if (!inbox) {
+    throw new Error("Directory inbox is not configured.");
   }
 
-  const response = await fetch(RESEND_ENDPOINT, {
+  const origin = new URL(siteConfig.url).origin;
+  const response = await fetch(new URL(encodeURIComponent(inbox), FORMSUBMIT_ENDPOINT), {
     method: "POST",
+    redirect: "error",
+    signal: AbortSignal.timeout(10_000),
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Accept: "application/json",
       "Content-Type": "application/json",
+      Origin: origin,
+      Referer: `${origin}/`,
     },
     body: JSON.stringify({
-      from,
-      to: [to],
-      subject: sanitizeEmailSubject(input.subject),
-      text: sanitizeEmailText(input.text),
+      _url: origin,
+      _subject: sanitizeEmailSubject(input.subject),
+      _captcha: "false",
+      message: sanitizeEmailText(input.text),
     }),
   });
 
   if (!response.ok) {
-    const detail = (await response.text()).slice(0, 240);
-    throw new Error(`Email delivery failed (${response.status}): ${detail}`);
+    throw new Error(`FormSubmit rejected the request (HTTP ${response.status}).`);
+  }
+  const result = (await response.json()) as { success?: unknown } | null;
+  // A first submission can return HTTP 200 with success=false pending activation.
+  if (result?.success !== true && result?.success !== "true") {
+    throw new Error("FormSubmit did not confirm delivery. Check that the form has been activated.");
   }
 }
