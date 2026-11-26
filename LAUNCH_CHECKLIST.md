@@ -22,6 +22,7 @@ Manual tasks only. None of these items are marked complete by the production-rea
 
 - [ ] Set the server-only `DIRECTORY_INBOX_EMAIL` in production
 - [ ] Activate FormSubmit for the recipient and production origin
+- [ ] Set `DIRECTORY_FORMSUBMIT_ID` to the public forwarding code from the activation email
 - [ ] Confirm the inbox mailbox is monitored
 - [ ] Test Add Listing, Report Incorrect Information, and Claim/Update Listing in production
 - [ ] Confirm an inactive inbox or delivery failure shows an error

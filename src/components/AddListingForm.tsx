@@ -1,3 +1,4 @@
+import { DirectoryForm } from "@/components/forms/DirectoryForm";
 import { HoneypotFields } from "@/components/forms/HoneypotFields";
 import { FIELD_LIMITS } from "@/lib/directory-request";
 import { getPublicCategories } from "@/lib/categories";
@@ -17,7 +18,7 @@ export function AddListingForm({
   const workspaceTypes = categories.length > 0 ? categories : getPublicCategories().map((category) => ({ slug: category.slug, name: category.name }));
 
   return (
-    <form method="post" action="/api/directory-request" className="card space-y-5 p-5 sm:p-6">
+    <DirectoryForm>
       <input type="hidden" name="kind" value="listing_suggestion" />
       <input type="hidden" name="return_to" value="/add-listing" />
       <HoneypotFields startedAt={startedAt} />
@@ -211,6 +212,6 @@ export function AddListingForm({
       <p className="text-sm text-slate-600">
         Submissions are reviewed manually. Nothing is published automatically, and submitted contact details are not added to the directory unless we verify them.
       </p>
-    </form>
+    </DirectoryForm>
   );
 }

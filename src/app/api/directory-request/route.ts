@@ -104,9 +104,11 @@ export async function POST(request: Request) {
   const turnstileToken =
     typeof payload.fields[TURNSTILE_TOKEN_FIELD] === "string" ? payload.fields[TURNSTILE_TOKEN_FIELD] : "";
 
+  const json = wantsJson(request);
   const result = await submitDirectoryRequest({
     kind: payload.kind,
     fields: payload.fields,
+    browserDelivery: json && request.headers.get("x-directory-delivery") === "browser",
     spam: {
       honeypot,
       startedAt,
@@ -114,10 +116,9 @@ export async function POST(request: Request) {
     },
   });
 
-  const json = wantsJson(request);
   if (json) {
     const status = result.status === "invalid" ? 400 : result.status === "unavailable" ? 503 : 200;
-    return NextResponse.json(result, { status });
+    return NextResponse.json(result, { status, headers: { "Cache-Control": "no-store" } });
   }
 
   if (result.status === "received" || result.status === "spam") {

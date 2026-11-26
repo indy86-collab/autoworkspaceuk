@@ -1,15 +1,16 @@
-import { allowDevelopmentSubmissionFallback, isEmailDeliveryConfigured, sendDirectoryEmail } from "@/lib/email";
+import { allowDevelopmentSubmissionFallback, browserEmailDelivery, isEmailDeliveryConfigured, sendDirectoryEmail } from "@/lib/email";
 import { parseDirectoryRequest, requestEmailSubject, requestEmailText } from "@/lib/directory-request";
 import { evaluateSpamProtection, type SpamProtectionInput } from "@/lib/spam-protection";
 import type { DirectoryRequest } from "@/lib/types";
 
-export type DirectoryRequestStatus = "received" | "invalid" | "spam" | "unavailable";
+export type DirectoryRequestStatus = "received" | "invalid" | "spam" | "unavailable" | "forward";
 
 export interface SubmitDirectoryRequestResult {
   ok: boolean;
   status: DirectoryRequestStatus;
   developmentOnly?: boolean;
   errors?: string[];
+  delivery?: { id: string; subject: string; message: string };
   message: string;
 }
 
@@ -27,6 +28,7 @@ export async function submitDirectoryRequest(input: {
   kind: string;
   fields: Record<string, unknown>;
   spam: SpamProtectionInput;
+  browserDelivery?: boolean;
 }): Promise<SubmitDirectoryRequestResult> {
   const parsed = parseDirectoryRequest(input.kind, input.fields);
   if (!parsed.ok) {
@@ -45,6 +47,12 @@ export async function submitDirectoryRequest(input: {
       status: "spam",
       message: RECEIVED_MESSAGE,
     };
+  }
+
+  const email = { subject: requestEmailSubject(parsed.request), text: requestEmailText(parsed.request) };
+  const delivery = input.browserDelivery ? browserEmailDelivery(email) : undefined;
+  if (delivery) {
+    return { ok: true, status: "forward", delivery, message: "Ready to send." };
   }
 
   if (!isEmailDeliveryConfigured()) {
@@ -70,10 +78,7 @@ export async function submitDirectoryRequest(input: {
   }
 
   try {
-    await sendDirectoryEmail({
-      subject: requestEmailSubject(parsed.request),
-      text: requestEmailText(parsed.request),
-    });
+    await sendDirectoryEmail(email);
   } catch (error) {
     const detail = error instanceof Error ? error.message : "Unknown email error";
     console.error("[directory-request] email delivery failed", {

@@ -3,6 +3,19 @@ import { siteConfig } from "@/lib/site";
 
 const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/";
 
+export function browserEmailDelivery(input: { subject: string; text: string }) {
+  const id = process.env.DIRECTORY_FORMSUBMIT_ID?.trim();
+  if (!id || !/^[a-zA-Z0-9_-]+$/.test(id)) {
+    return undefined;
+  }
+
+  return {
+    id,
+    subject: sanitizeEmailSubject(input.subject),
+    message: sanitizeEmailText(input.text),
+  };
+}
+
 export function isEmailDeliveryConfigured(): boolean {
   return Boolean(process.env.DIRECTORY_INBOX_EMAIL?.trim());
 }

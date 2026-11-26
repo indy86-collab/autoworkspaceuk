@@ -119,9 +119,9 @@ Not indexed:
 
 Set `NEXT_PUBLIC_SITE_URL` before production. See `.env.example`. The default canonical host is `https://www.autoworkspace.uk`.
 
-The Add Listing, Report Incorrect Information and Claim/Update Listing forms send validated submissions through FormSubmit from `POST /api/directory-request`. Set the server-only `DIRECTORY_INBOX_EMAIL` in production. Keep the recipient address out of public markup and source control. No API key or sender-domain setup is required.
+The Add Listing, Report Incorrect Information and Claim/Update Listing forms validate submissions at `POST /api/directory-request` and send them to FormSubmit through the visitor's browser. Set `DIRECTORY_FORMSUBMIT_ID` to the forwarding code from FormSubmit's activation email, keeping the recipient address out of public markup. The server-only `DIRECTORY_INBOX_EMAIL` is used by the server-side submission path. No API key or sender-domain setup is required.
 
-FormSubmit sends a one-time activation email when it first receives a submission for the inbox. Activate the form and verify receipt with a fresh test on the production domain. Until activation, the site shows a delivery error. In local development without an inbox, the route validates and logs a development-only submission.
+FormSubmit sends a one-time activation email when it first receives a submission for the inbox. Activate the form and verify receipt with a fresh browser test on the production domain. The server-side relay can be rejected by FormSubmit on Vercel. In local development with neither email setting configured, the route validates and logs a development-only submission.
 
 ## Development
 

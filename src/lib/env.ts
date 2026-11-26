@@ -10,6 +10,7 @@ export interface EnvVariableDefinition {
 export const PRODUCTION_REQUIRED_ENV = [
   "NEXT_PUBLIC_SITE_URL",
   "DIRECTORY_INBOX_EMAIL",
+  "DIRECTORY_FORMSUBMIT_ID",
 ] as const;
 
 export const OPTIONAL_ENV = ["TURNSTILE_SECRET_KEY", "NEXT_PUBLIC_TURNSTILE_SITE_KEY"] as const;
@@ -26,6 +27,12 @@ export const ENV_VARIABLES: readonly EnvVariableDefinition[] = [
     requiredInProduction: true,
     requiredInDevelopment: false,
     description: "Server-only recipient for FormSubmit delivery of listing, report, and claim emails.",
+  },
+  {
+    name: "DIRECTORY_FORMSUBMIT_ID",
+    requiredInProduction: true,
+    requiredInDevelopment: false,
+    description: "Public forwarding code from the FormSubmit activation email for browser delivery.",
   },
   {
     name: "TURNSTILE_SECRET_KEY",

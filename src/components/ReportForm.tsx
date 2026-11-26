@@ -1,3 +1,4 @@
+import { DirectoryForm } from "@/components/forms/DirectoryForm";
 import { HoneypotFields } from "@/components/forms/HoneypotFields";
 import { FIELD_LIMITS, REPORT_ISSUE_LABELS } from "@/lib/directory-request";
 import { REPORT_ISSUES } from "@/lib/types";
@@ -18,7 +19,7 @@ export function ReportForm({
   const returnTo = listingSlug ? `/report?listing=${listingSlug}` : "/report";
 
   return (
-    <form method="post" action="/api/directory-request" className="card space-y-5 p-5 sm:p-6">
+    <DirectoryForm>
       <input type="hidden" name="kind" value="listing_report" />
       <input type="hidden" name="return_to" value={returnTo} />
       <input type="hidden" name="listingId" value={listingId ?? ""} />
@@ -71,6 +72,6 @@ export function ReportForm({
       <p className="text-sm text-slate-600">
         Reports are reviewed manually. The listing is not changed automatically.
       </p>
-    </form>
+    </DirectoryForm>
   );
 }

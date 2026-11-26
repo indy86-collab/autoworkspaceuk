@@ -42,7 +42,7 @@ if (!report.ok) {
 
 if (!productionMode && report.missingRequiredProduction.length > 0) {
   console.log("");
-  console.log("Local development may continue without an email inbox. Set DIRECTORY_INBOX_EMAIL to enable delivery.");
+  console.log("Local development may continue without email delivery. Set DIRECTORY_FORMSUBMIT_ID for browser delivery.");
 }
 
 console.log("");

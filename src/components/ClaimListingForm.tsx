@@ -1,3 +1,4 @@
+import { DirectoryForm } from "@/components/forms/DirectoryForm";
 import { HoneypotFields } from "@/components/forms/HoneypotFields";
 import { FIELD_LIMITS } from "@/lib/directory-request";
 
@@ -17,7 +18,7 @@ export function ClaimListingForm({
   const returnTo = listingSlug ? `/claim-listing?listing=${listingSlug}` : "/claim-listing";
 
   return (
-    <form method="post" action="/api/directory-request" className="card space-y-5 p-5 sm:p-6">
+    <DirectoryForm>
       <input type="hidden" name="kind" value="listing_claim" />
       <input type="hidden" name="return_to" value={returnTo} />
       <input type="hidden" name="listingId" value={listingId ?? ""} />
@@ -97,6 +98,6 @@ export function ClaimListingForm({
       <p className="text-sm text-slate-600">
         This sends a review request. We do not create accounts, and we do not automatically verify ownership or change the listing.
       </p>
-    </form>
+    </DirectoryForm>
   );
 }
